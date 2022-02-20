@@ -3,9 +3,10 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamageable
 {
     public int Health { get; private set; }
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public int Food { get; private set; } // int?
     public int Water { get; private set; } // int?
-
+    
     [Header("General Stats")]
     [SerializeField]
     private int maxHealth;
@@ -78,4 +79,7 @@ public class Player : MonoBehaviour, IDamageable
     public void AddFoodAmount(int amount) =>  Food += amount;
 
     public void AddWaterAmount(int amount) => Water += amount;
+
+    public int GetMaxFood() => maxFood;
+    public int GetMaxWater() => maxWater;
 }
