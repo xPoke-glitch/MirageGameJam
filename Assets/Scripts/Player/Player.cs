@@ -74,4 +74,8 @@ public class Player : MonoBehaviour, IDamageable
             Water--;
         }
     }
+
+    public void AddFoodAmount(int amount) =>  Food += amount;
+
+    public void AddWaterAmount(int amount) => Water += amount;
 }
