@@ -9,10 +9,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 3f;
 
 
-    protected bool _canMove = true;
     protected CharacterController controller;
     private float minMagnitude = 0.01f;
-    private float speed = 0;
 
 
     private void Awake()
@@ -27,7 +25,6 @@ public class Movement : MonoBehaviour
 
     void Move()
     {
-        if (!_canMove) return;
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -38,7 +35,7 @@ public class Movement : MonoBehaviour
     protected void StartMoving(float horizontalInput, float verticalInput)
     {
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        controller.SimpleMove(movementDirection * speed);
+        controller.SimpleMove(movementDirection * walkSpeed);
         Vector3 normalizedMovementDirection = movementDirection.normalized;
         if (normalizedMovementDirection.magnitude > minMagnitude)
         {
