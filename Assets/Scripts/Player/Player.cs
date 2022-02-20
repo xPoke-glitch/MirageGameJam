@@ -18,6 +18,10 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private float waterDecreaseRate; // seconds
 
+    [Header("References")]
+    [SerializeField]
+    public Transform handToAttachWeapon; 
+
     private float _foodTimer;
     private float _waterTimer;
 
