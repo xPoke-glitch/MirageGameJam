@@ -228,9 +228,9 @@ GameObject:
   - component: {fileID: 888916708}
   - component: {fileID: 888916707}
   - component: {fileID: 888916706}
-  - component: {fileID: 888916712}
   - component: {fileID: 888916711}
   - component: {fileID: 888916710}
+  - component: {fileID: 888916712}
   - component: {fileID: 888916713}
   m_Layer: 0
   m_Name: Player
@@ -378,6 +378,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa31ac69831b3c448b405a7cbf0e005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  maxFood: 20
+  maxWater: 20
+  foodDecreaseRate: 4
+  waterDecreaseRate: 2
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

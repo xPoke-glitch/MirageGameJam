@@ -1,10 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
     public int Health { get; private set; }
+    public int Food { get; private set; } // int?
+    public int Water { get; private set; } // int?
+
+    [Header("General Stats")]
+    [SerializeField]
+    private int maxHealth;
+    [SerializeField]
+    private int maxFood;
+    [SerializeField]
+    private int maxWater;
+    [SerializeField]
+    private float foodDecreaseRate; // seconds
+    [SerializeField]
+    private float waterDecreaseRate; // seconds
+
+    private float _foodTimer;
+    private float _waterTimer;
 
     public void Damage(int amount)
     {
@@ -17,11 +32,42 @@ public class Player : MonoBehaviour, IDamageable
 
     void Start()
     {
-        
+        Health = maxHealth;
+        Food = maxFood;
+        Water = maxWater;
     }
 
     void Update()
     {
-        
+        DecreaseFoodOverTime(foodDecreaseRate);
+        DecreaseWaterOverTime(waterDecreaseRate);
+        //Debug.Log("[Player Update] Current Food: "+Food);
+        //Debug.Log("[Player Update] Current Water "+Water);
+    }
+
+    private void DecreaseFoodOverTime(float decreaseRate)
+    {
+        if (Food <= 0)
+            return;
+        _foodTimer += Time.deltaTime;
+
+        if(_foodTimer >= decreaseRate)
+        {
+            _foodTimer = 0;
+            Food--;
+        }
+    }
+
+    private void DecreaseWaterOverTime(float decreaseRate)
+    {
+        if (Water <= 0)
+            return;
+        _waterTimer += Time.deltaTime;
+
+        if (_waterTimer >= decreaseRate)
+        {
+            _waterTimer = 0;
+            Water--;
+        }
     }
 }
