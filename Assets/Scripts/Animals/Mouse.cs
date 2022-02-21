@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Lizard : Animal
+public class Mouse : Animal
 {
     [Header("Animal Specific Stats")]
     [SerializeField]
@@ -16,7 +16,7 @@ public class Lizard : Animal
     private float fleeAcceleration;
     [SerializeField]
     private Transform[] navPoints;
-    
+
     protected override void SetStateMachine()
     {
         // Implementing the state machine (States and Transitions)
@@ -26,9 +26,9 @@ public class Lizard : Animal
         var flee = new Flee(_agent, this, fleeSpeed, fleeAcceleration);
 
         // Transitions and Any-Transitions
-        _stateMachine.AddTransition(walking, flee, ()=>_isPlayerInRange);
-        _stateMachine.AddTransition(flee, walking, () => { return (_agent.remainingDistance<=0) && (!_isPlayerInRange); });
-        
+        _stateMachine.AddTransition(walking, flee, () => _isPlayerInRange);
+        _stateMachine.AddTransition(flee, walking, () => { return (_agent.remainingDistance <= 0) && (!_isPlayerInRange); });
+
         // Set Initial State
         _stateMachine.SetState(walking);
     }

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Animal : MonoBehaviour, IDamageable
 {
+    [Header("Base Animal")]
     public float Radius;
     public int Health { get; protected set; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
