@@ -8,6 +8,9 @@ public abstract class Animal : MonoBehaviour
 {
     public float Radius;
 
+    [SerializeField]
+    protected FoodData foodDrop;
+
     protected NavMeshAgent _agent;
     protected bool _isPlayerInRange;
 
