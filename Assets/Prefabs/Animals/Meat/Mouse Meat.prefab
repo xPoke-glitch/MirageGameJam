@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4009643577333862354
+--- !u!1 &6037055962121035678
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4009643577333861420}
-  - component: {fileID: 4009643577333861423}
-  - component: {fileID: 4009643577333861422}
-  - component: {fileID: 4009643577333862353}
-  - component: {fileID: 4009643577333862352}
-  - component: {fileID: 4009643577333862355}
+  - component: {fileID: 3350403950504156796}
+  - component: {fileID: 2847829436885115529}
+  - component: {fileID: 1795906858245227738}
+  - component: {fileID: 3766554357792666960}
   m_Layer: 0
-  m_Name: Lizard
+  m_Name: Mouse Meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4009643577333861420
+--- !u!4 &3350403950504156796
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009643577333862354}
+  m_GameObject: {fileID: 6037055962121035678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.647579, y: 0.91328377, z: 0.88632303}
+  m_LocalPosition: {x: 24.387222, y: 0.11289978, z: 18.855837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4009643577333861423
+--- !u!33 &2847829436885115529
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009643577333862354}
+  m_GameObject: {fileID: 6037055962121035678}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4009643577333861422
+--- !u!23 &1795906858245227738
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009643577333862354}
+  m_GameObject: {fileID: 6037055962121035678}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,61 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4009643577333862353
+--- !u!65 &3766554357792666960
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009643577333862354}
+  m_GameObject: {fileID: 6037055962121035678}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &4009643577333862352
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009643577333862354}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &4009643577333862355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009643577333862354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4feb28edd643bf541a67a1ac4802e131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 5
-  maxHealth: 10
-  foodDrop: {fileID: 11400000, guid: acde2a979ed62ce4f82d57e06ff6d47b, type: 2}
-  walkSpeed: 3.5
-  walkAcceleration: 8
-  fleeSpeed: 10
-  fleeAcceleration: 20
-  navPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
