@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour, IPickable
     
     public int animationTime; // think of it later
 
-    private bool _isPickedUp;
+    private static bool _isPickedUp;
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
 
@@ -23,6 +23,7 @@ public class Weapon : MonoBehaviour, IPickable
     {
         if (!_isPickedUp && other.gameObject.CompareTag("Player"))
         {
+            
             PickUp(other.gameObject);
             _isPickedUp = true;
         }
@@ -30,9 +31,13 @@ public class Weapon : MonoBehaviour, IPickable
 
     public void PickUp(GameObject player)
     {
-        // Attach to the player
-        transform.parent = player.transform;
-        transform.position = player.GetComponent<Player>().handToAttachWeapon.position;
+        print("PICKING UP");
+
+        Transform hand = player.GetComponent<Player>().handToAttachWeapon;
+
+        // Attach to the player's hand
+        transform.parent = hand;
+        transform.position = hand.position;
 
         // In order to have physics to drop it
         _rb = gameObject.AddComponent<Rigidbody>();
@@ -54,7 +59,7 @@ public class Weapon : MonoBehaviour, IPickable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag("Ground")) // Could change it later to be based on the layer
         {
             _boxCollider.isTrigger = true;
             Destroy(gameObject.GetComponent<Rigidbody>());
@@ -65,10 +70,11 @@ public class Weapon : MonoBehaviour, IPickable
     {
         _isPickedUp = false;
         _rb.isKinematic = false;
-        gameObject.GetComponent<BoxCollider>().isTrigger = false;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        _boxCollider.isTrigger = false;
 
-        Player player = gameObject.transform.parent.GetComponent<Player>();
-        gameObject.transform.position = player.handToAttachWeapon.position + Vector3.forward;
+        Player player = gameObject.transform.root.GetComponent<Player>();
+        gameObject.transform.position = player.handToAttachWeapon.position + Vector3.forward; // change it later (based on anim)
         gameObject.transform.parent = null;
     }
 
