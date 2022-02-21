@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour, IPickable
 {
-    [SerializeField] protected WeaponData weapon;
+    [SerializeField] protected WeaponData weaponData;
     
     public int animationTime; // think of it later
+
+    public static bool IsPickedUp { get => _isPickedUp; }
+
+    public static Weapon CurrentWeapon;
+
 
     private static bool _isPickedUp;
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
 
+    
+
     private void Awake()
     {
         _rb = null;
         _isPickedUp = false;
+        CurrentWeapon = null;
         TryGetComponent<BoxCollider>(out _boxCollider);
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (!_isPickedUp && other.gameObject.CompareTag("Player"))
         {
-            
             PickUp(other.gameObject);
             _isPickedUp = true;
         }
@@ -31,7 +39,7 @@ public class Weapon : MonoBehaviour, IPickable
 
     public void PickUp(GameObject player)
     {
-        print("PICKING UP");
+        CurrentWeapon = this;
 
         Transform hand = player.GetComponent<Player>().handToAttachWeapon;
 
@@ -44,18 +52,7 @@ public class Weapon : MonoBehaviour, IPickable
         _rb.isKinematic = true;
     }
 
-    private void Update()
-    {
-        if (_isPickedUp && Input.GetMouseButtonDown(0))
-        {
-            print("Playing animation"); // TODO: disable playing animation if it's already playing
-            PlayAnimation();
-        }
-        else if (_isPickedUp && Input.GetMouseButtonDown(1))
-        {
-            Drop();
-        }
-    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -66,11 +63,10 @@ public class Weapon : MonoBehaviour, IPickable
         }
     }
 
-    private void Drop()
+    public void Drop()
     {
         _isPickedUp = false;
         _rb.isKinematic = false;
-        //gameObject.GetComponent<Rigidbody>().isKinematic = false;
         _boxCollider.isTrigger = false;
 
         Player player = gameObject.transform.root.GetComponent<Player>();
@@ -78,8 +74,12 @@ public class Weapon : MonoBehaviour, IPickable
         gameObject.transform.parent = null;
     }
 
-    private void PlayAnimation()
+    /// <summary>
+    /// Player attacks an animal
+    /// </summary>
+    public void PlayAttackAnimation() 
     {
-        // TODO
+        // Call play animation method, argument is weaponData.AnimationClip
+        print("Animation");
     }
 }

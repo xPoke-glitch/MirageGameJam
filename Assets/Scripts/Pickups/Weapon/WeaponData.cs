@@ -6,4 +6,5 @@ using UnityEngine;
 public class WeaponData : ScriptableObject {
     public string Name;
     public int Damage;
+    public AnimationClip AnimationClip;
 }
