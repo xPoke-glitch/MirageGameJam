@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.968}
+  m_AnchoredPosition: {x: 0, y: 2.9680176}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8328205018240510739
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8328205018240510737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: damageableCharacterObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2104738066223611729, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2104738067393547763, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -231,6 +235,10 @@ PrefabInstance:
     - target: {fileID: 2104738067393547763, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104738067393547764, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
