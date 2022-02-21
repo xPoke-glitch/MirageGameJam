@@ -6,7 +6,8 @@ public class Mirage : MonoBehaviour
 
     public LayerMask whatIsPlayer;
 
-    [SerializeField] private GameObject mirageObject; // Forest, Arctic, etc
+    [SerializeField] 
+    private GameObject mirageObject; // Forest, Arctic, etc
 
     private bool _itAppeared = false;
 
