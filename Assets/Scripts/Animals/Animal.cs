@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public abstract class Animal : MonoBehaviour
+public abstract class Animal : MonoBehaviour, IDamageable
 {
     public float Radius;
+    public int Health { get; protected set; }
 
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+
+    [SerializeField]
+    protected int maxHealth;
     [SerializeField]
     protected FoodData foodDrop;
 
@@ -18,10 +23,15 @@ public abstract class Animal : MonoBehaviour
 
     protected void Awake()
     {
-        _isPlayerInRange = false;
         _agent = GetComponent<NavMeshAgent>();
         _stateMachine = new StateMachine();
         SetStateMachine();
+    }
+
+    protected void Start()
+    {
+        _isPlayerInRange = false;
+        Health = maxHealth;
     }
 
     protected void Update()
@@ -49,4 +59,12 @@ public abstract class Animal : MonoBehaviour
 
     public float GetRadius() => Radius;
 
+    public void Damage(int amount)
+    {
+        if (amount <= 0)
+            return;
+        Health -= amount;
+        if (Health <= 0)
+            Health = 0;
+    }
 }
