@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Mirage : MonoBehaviour
 {
-    //[SerializeField] private float _externalRadius; // Mirage Appears when player enters
-    [SerializeField] private float _internalRadius; // Mirage Disappears when player enters
+    public float Radius; 
 
     public LayerMask whatIsPlayer;
 
@@ -13,19 +12,10 @@ public class Mirage : MonoBehaviour
 
     private void Update()
     {
-        //if (Physics.CheckSphere(transform.position, _externalRadius, whatIsPlayer))
-        //{
-            if (Physics.CheckSphere(transform.position, _internalRadius, whatIsPlayer))
-            {
-                //RemovesMirage();
-                ShowMirage();
-            }
-            else
-            {
-                //ShowMirage();
-                RemovesMirage();
-            }
-        //}
+        if (Physics.CheckSphere(transform.position, Radius, whatIsPlayer))
+            ShowMirage();
+        else
+            RemovesMirage();
     }
 
     private void ShowMirage()
