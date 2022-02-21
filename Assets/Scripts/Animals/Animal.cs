@@ -43,7 +43,6 @@ public abstract class Animal : MonoBehaviour, IDamageable
 
     protected void Update()
     {
-        Debug.Log("[Animal Update] Last player postion: " + _lastPlayerPosition);
         _stateMachine.Tick();
     }
 
@@ -62,14 +61,17 @@ public abstract class Animal : MonoBehaviour, IDamageable
                 break;
             }
         }
-
+        
         if (!_isPlayerInRange)
         {
             _lastPlayerPosition = Vector3.zero;
         }
+        
     }
 
     public float GetRadius() => Radius;
+
+    public Vector3 GetLastPlayerPositinKnown() => _lastPlayerPosition;
 
     public void Damage(int amount)
     {

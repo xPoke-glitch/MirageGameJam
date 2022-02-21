@@ -8,10 +8,15 @@ public class WalkingAround : IState
     private NavMeshAgent _agent;
     private Transform[] _points;
 
-    public WalkingAround(NavMeshAgent agent, Transform[] points)
+    private float _walkSpeed;
+    private float _walkAcceleration;
+
+    public WalkingAround(NavMeshAgent agent, Transform[] points, float walkSpeed, float walkAcceleration)
     {
         _agent = agent;
         _points = points;
+        _walkSpeed = walkSpeed;
+        _walkAcceleration = walkAcceleration;
     }
 
     public void OnEnter()
@@ -36,6 +41,8 @@ public class WalkingAround : IState
         {
             // Arrived
             int indexPoint = Random.Range(0, _points.Length); // Select the next point
+            _agent.speed = _walkSpeed;
+            _agent.acceleration = _walkAcceleration;
             _agent.SetDestination(_points[indexPoint].position); // Go to the next point
         }
     }
