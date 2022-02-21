@@ -8,7 +8,6 @@ public abstract class Animal : MonoBehaviour, IDamageable
 {
     public float Radius;
     public int Health { get; protected set; }
-
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     [SerializeField]
@@ -18,8 +17,10 @@ public abstract class Animal : MonoBehaviour, IDamageable
 
     protected NavMeshAgent _agent;
     protected bool _isPlayerInRange;
-
+    protected Vector3 _lastPlayerPosition;
     protected StateMachine _stateMachine;
+
+    protected abstract void SetStateMachine();
 
     protected void Awake()
     {
@@ -35,12 +36,14 @@ public abstract class Animal : MonoBehaviour, IDamageable
 
     protected void Start()
     {
+        _lastPlayerPosition = Vector3.zero;
         _isPlayerInRange = false;
         Health = maxHealth;
     }
 
     protected void Update()
     {
+        Debug.Log("[Animal Update] Last player postion: " + _lastPlayerPosition);
         _stateMachine.Tick();
     }
 
@@ -50,17 +53,21 @@ public abstract class Animal : MonoBehaviour, IDamageable
         _isPlayerInRange = false;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius);
-        foreach(Collider collider in hitColliders)
+        foreach (Collider collider in hitColliders)
         {
-            if(collider.gameObject.TryGetComponent<Player>(out player))
+            if (collider.gameObject.TryGetComponent<Player>(out player))
             {
                 _isPlayerInRange = true;
+                _lastPlayerPosition = player.transform.position;
                 break;
             }
         }
-    }
 
-    protected abstract void SetStateMachine();
+        if (!_isPlayerInRange)
+        {
+            _lastPlayerPosition = Vector3.zero;
+        }
+    }
 
     public float GetRadius() => Radius;
 
