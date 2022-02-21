@@ -32,7 +32,14 @@ public class Player : MonoBehaviour, IDamageable
             return;
         Health -= amount;
         if (Health <= 0)
+        {
             Health = 0;
+            Die();
+        }
+    }
+    public void Die()
+    {
+        // Do something when the player Dies
     }
 
     void Start()

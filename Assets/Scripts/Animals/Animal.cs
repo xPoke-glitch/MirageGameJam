@@ -80,6 +80,11 @@ public abstract class Animal : MonoBehaviour, IDamageable
             return;
         Health -= amount;
         if (Health <= 0)
+        {
             Health = 0;
+            Die();
+        }
     }
+
+    public abstract void Die();
 }
