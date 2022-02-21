@@ -24,6 +24,11 @@ public abstract class Animal : MonoBehaviour, IDamageable
     protected void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+
+        // Randomize the collision avoidance priority
+        int collsionPrio = Random.Range(0, 51);
+        _agent.avoidancePriority = collsionPrio;
+
         _stateMachine = new StateMachine();
         SetStateMachine();
     }
