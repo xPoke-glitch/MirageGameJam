@@ -8,4 +8,5 @@ public interface IDamageable
     public int MaxHealth { get; set; }
 
     public void Damage(int amount);
+    public void Die();
 }

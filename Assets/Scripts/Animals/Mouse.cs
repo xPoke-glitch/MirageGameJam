@@ -17,6 +17,11 @@ public class Mouse : Animal
     [SerializeField]
     private Transform[] navPoints;
 
+    public override void Die()
+    {
+        // Do something
+    }
+
     protected override void SetStateMachine()
     {
         // Implementing the state machine (States and Transitions)

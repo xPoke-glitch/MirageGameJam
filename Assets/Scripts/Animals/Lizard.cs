@@ -16,7 +16,12 @@ public class Lizard : Animal
     private float fleeAcceleration;
     [SerializeField]
     private Transform[] navPoints;
-    
+
+    public override void Die()
+    {
+        // Do something
+    }
+
     protected override void SetStateMachine()
     {
         // Implementing the state machine (States and Transitions)
