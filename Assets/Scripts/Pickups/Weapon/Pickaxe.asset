@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   Name: Pickaxe
-  Damage: 60
+  Damage: 5
+  AnimationClip: {fileID: 0}

@@ -83,9 +83,9 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    public void AddFoodAmount(int amount) =>  Food += amount;
+    public void AddFoodAmount(int amount) => Food = Mathf.Clamp(Food + amount, 0, maxFood);
 
-    public void AddWaterAmount(int amount) => Water += amount;
+    public void AddWaterAmount(int amount) => Water = Mathf.Clamp(Water + amount, 0, maxWater);
 
     public int GetMaxFood() => maxFood;
     public int GetMaxWater() => maxWater;

@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Food : MonoBehaviour, IPickable
 {
-    [SerializeField] int amount;
+    [SerializeField] private FoodData _food;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Player"))
-            PickUp(other.gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+            PickUp(collision.gameObject);
     }
+
 
     public void PickUp(GameObject player)
     {
-        player.GetComponent<Player>().AddFoodAmount(amount);
+        player.GetComponent<Player>().AddFoodAmount(_food.Value);
         Destroy(gameObject);
     }
 }

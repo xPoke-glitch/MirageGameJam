@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498229f83e67a2e4dbd5a37637a88df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: cd747e896131b2a4eaa048242f45858b, type: 2}
+  weaponData: {fileID: 11400000, guid: cd747e896131b2a4eaa048242f45858b, type: 2}
   animationTime: 3

@@ -15,6 +15,8 @@ public abstract class Animal : MonoBehaviour, IDamageable
     protected int maxHealth;
     [SerializeField]
     protected FoodData foodDrop;
+    
+    protected bool isAlive = true;
 
     protected NavMeshAgent _agent;
     protected bool _isPlayerInRange;
@@ -88,7 +90,13 @@ public abstract class Animal : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter(Collider other)
     {
-        print("ANIMAL TRIGGER: " + other.gameObject.name);
+        Weapon weapon;
+        if(other.gameObject.TryGetComponent<Weapon>(out weapon))
+        {
+            //print("Weapon is " + Weapon.CurrentWeapon);
+            print(this.name + " health is "+ Health);
+            Damage(weapon.GetDamage());
+        }
     }
 
     public abstract void Die();

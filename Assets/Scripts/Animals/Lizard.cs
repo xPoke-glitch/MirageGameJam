@@ -17,9 +17,14 @@ public class Lizard : Animal
     [SerializeField]
     private Transform[] navPoints;
 
+
     public override void Die()
     {
-        // Do something
+        if (!isAlive) return;
+        isAlive = false;
+        GameObject meat = Instantiate(foodDrop.Prefab, transform.position + Vector3.up, transform.rotation);
+        meat.GetComponent<Rigidbody>().AddForce(10*Vector3.up, ForceMode.Impulse);
+        Destroy(this.gameObject);
     }
 
     protected override void SetStateMachine()

@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour, IPickable
 
     public int GetDamage()
     {
-        return CurrentWeapon ? 0 : CurrentWeapon.weaponData.Damage;
+        return CurrentWeapon == null ? 0 : CurrentWeapon.weaponData.Damage;
     }
 
 
@@ -69,6 +69,7 @@ public class Weapon : MonoBehaviour, IPickable
         _isPickedUp = false;
         _rb.isKinematic = false;
         _boxCollider.isTrigger = false;
+        CurrentWeapon = null;
 
         Player player = gameObject.transform.root.GetComponent<Player>();
         gameObject.transform.position = player.handToAttachWeapon.position + Vector3.forward; // change it later (based on anim)
