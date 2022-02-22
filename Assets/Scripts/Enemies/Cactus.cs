@@ -10,6 +10,10 @@ public class Cactus : Enemy
     [SerializeField]
     private float walkAcceleration;
     [SerializeField]
+    private float followSpeed;
+    [SerializeField]
+    private float followAcceleration;
+    [SerializeField]
     private Transform[] navPoints;
 
     public override void Die()
@@ -23,8 +27,11 @@ public class Cactus : Enemy
 
         // States
         var walking = new WalkingAround(_agent, navPoints, walkSpeed, walkAcceleration);
-        
+        var following = new FollowPlayer(_agent, this, followSpeed, followAcceleration);
+
         // Transitions and Any-Transitions
+        _stateMachine.AddTransition(walking, following, () => _isPlayerInTriggerRange);
+        _stateMachine.AddTransition(following, walking, () => !_isPlayerInSightRange);
         
         // Set Initial State
         _stateMachine.SetState(walking);
