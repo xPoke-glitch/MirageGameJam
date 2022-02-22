@@ -24,6 +24,9 @@ public class WalkingAround : IState
         _agent.enabled = true;
         _agent.isStopped = false;
 
+        _agent.speed = _walkSpeed;
+        _agent.acceleration = _walkAcceleration;
+
         int indexPoint = Random.Range(0, _points.Length);
         _agent.SetDestination(_points[indexPoint].position);
     }
