@@ -49,7 +49,7 @@ public class Flee : IState
             _agent.acceleration = _fleeAcceleration;
             _agent.speed = _fleeSpeed;
             _agent.SetDestination(_runAwayPoint);
-            Debug.Log("[Flee Tick] Destination set");
+            //Debug.Log("[Flee Tick] Destination set");
         }
     }
 }

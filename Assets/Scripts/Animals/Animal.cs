@@ -86,5 +86,10 @@ public abstract class Animal : MonoBehaviour, IDamageable
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        print("ANIMAL TRIGGER: " + other.gameObject.name);
+    }
+
     public abstract void Die();
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4009643577333862353}
   - component: {fileID: 4009643577333862352}
   - component: {fileID: 4009643577333862355}
+  - component: {fileID: 8681949233620730539}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -92,11 +93,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4009643577333862354}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9450426, y: 0.8407751, z: 1}
+  m_Center: {x: -0.027478695, y: 0.07961246, z: 0}
 --- !u!195 &4009643577333862352
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -142,3 +143,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!65 &8681949233620730539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009643577333862354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9159479, y: 0.9589409, z: 1}
+  m_Center: {x: 0.042026043, y: -0.020529538, z: 0}

@@ -17,7 +17,6 @@ public class Weapon : MonoBehaviour, IPickable
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
 
-    
 
     private void Awake()
     {
@@ -52,6 +51,10 @@ public class Weapon : MonoBehaviour, IPickable
         _rb.isKinematic = true;
     }
 
+    public int GetDamage()
+    {
+        return CurrentWeapon ? 0 : CurrentWeapon.weaponData.Damage;
+    }
 
 
     private void OnCollisionEnter(Collision collision)
