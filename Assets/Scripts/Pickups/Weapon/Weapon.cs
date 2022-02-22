@@ -12,12 +12,10 @@ public class Weapon : MonoBehaviour, IPickable
 
     public static Weapon CurrentWeapon;
 
-
     private static bool _isPickedUp;
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
-
-
+    
     private void Awake()
     {
         _rb = null;

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public abstract class BarIndicator : MonoBehaviour
 { 
-    protected abstract float Value { get; }
-    protected abstract float MaxValue { get; }
+    public abstract float Value { get; }
+    public abstract float MaxValue { get; }
     protected Slider _slider;
 
     [SerializeField]

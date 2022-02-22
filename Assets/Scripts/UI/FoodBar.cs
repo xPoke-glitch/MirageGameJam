@@ -7,8 +7,8 @@ public class FoodBar : BarIndicator
     [SerializeField]
     private Player player;
 
-    protected override float Value => player.Food;
+    public override float Value => player.Food;
 
-    protected override float MaxValue => player.GetMaxFood();
+    public override float MaxValue => player.GetMaxFood();
 
 }

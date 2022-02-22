@@ -17,7 +17,7 @@ public class HealthBar : BarIndicator
             Debug.LogError("HealthBar Character Object should implement IDamageable!");
     }
 
-    protected override float Value => character.Health;
+    public override float Value => character.Health;
 
-    protected override float MaxValue => character.MaxHealth;
+    public override float MaxValue => character.MaxHealth;
 }
