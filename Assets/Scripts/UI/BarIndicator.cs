@@ -10,6 +10,11 @@ public abstract class BarIndicator : MonoBehaviour
     protected abstract float MaxValue { get; }
     protected Slider _slider;
 
+    [SerializeField]
+    protected Gradient gradient;
+    [SerializeField]
+    protected Image fill;
+
     protected virtual void Awake()
     {
         _slider = GetComponent<Slider>();
@@ -24,5 +29,6 @@ public abstract class BarIndicator : MonoBehaviour
     void Update()
     {
         _slider.value = Value;
+        fill.color = gradient.Evaluate(_slider.normalizedValue);
     }
 }

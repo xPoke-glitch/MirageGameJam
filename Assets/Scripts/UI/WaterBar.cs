@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaterBar : BarIndicator
 {
@@ -10,4 +11,5 @@ public class WaterBar : BarIndicator
     protected override float Value => player.Water;
 
     protected override float MaxValue => player.GetMaxWater();
+
 }
