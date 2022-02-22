@@ -93,8 +93,7 @@ public abstract class Animal : MonoBehaviour, IDamageable
         Weapon weapon;
         if(other.gameObject.TryGetComponent<Weapon>(out weapon))
         {
-            //print("Weapon is " + Weapon.CurrentWeapon);
-            print(this.name + " health is "+ Health);
+            Debug.Log("[Animal OnTriggerEnter] "+this.name + " health is "+ Health);
             Damage(weapon.GetDamage());
         }
     }

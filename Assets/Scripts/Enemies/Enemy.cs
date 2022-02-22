@@ -21,6 +21,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     [SerializeField]
     protected float attackDelay;
 
+    protected bool isAlive = true;
     protected bool _isPlayerInSightRange;
     protected bool _isPlayerInTriggerRange;
     protected bool _isPlayerInAttackRange;
@@ -144,6 +145,16 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         {
             _lastPlayerPosition = Vector3.zero;
             _player = null;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Weapon weapon;
+        if (other.gameObject.TryGetComponent<Weapon>(out weapon))
+        {
+            Debug.Log("[Enemy OnTriggerEnter] " + this.name + " health is " + Health);
+            Damage(weapon.GetDamage());
         }
     }
 

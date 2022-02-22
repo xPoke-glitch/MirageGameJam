@@ -18,7 +18,9 @@ public class Cactus : Enemy
 
     public override void Die()
     {
-        // TO-DO
+        if (!isAlive) return;
+        isAlive = false;
+        Destroy(this.gameObject);
     }
 
     protected override void SetStateMachine()
