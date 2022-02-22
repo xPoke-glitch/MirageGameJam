@@ -16,6 +16,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     [SerializeField]
     protected int maxHealth;
+    [SerializeField]
+    protected int damagePotency;
+    [SerializeField]
+    protected float attackDelay;
 
     protected bool _isPlayerInSightRange;
     protected bool _isPlayerInTriggerRange;
@@ -24,6 +28,12 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     protected NavMeshAgent _agent;
     protected Vector3 _lastPlayerPosition;
     protected StateMachine _stateMachine;
+    protected Player _player = null;
+
+    public abstract void Die();
+    protected abstract void SetStateMachine();
+
+    private bool _canAttack = true;
 
     public void Damage(int amount)
     {
@@ -36,10 +46,15 @@ public abstract class Enemy : MonoBehaviour, IDamageable
             Die();
         }
     }
-    public abstract void Die();
+    
     public Vector3 GetLastPlayerPositinKnown() => _lastPlayerPosition;
+    public Player GetPlayer() => _player;
 
-    protected abstract void SetStateMachine();
+    public void Attack(IDamageable target)
+    {
+        if (_canAttack)
+            StartCoroutine(DamageWithDelay(attackDelay,target));
+    }
 
     protected void Awake()
     {
@@ -77,7 +92,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     protected virtual void FixedUpdate()
     {
-        Player player = null;
         Collider[] hitColliders = null;
 
         _isPlayerInSightRange = false;
@@ -87,12 +101,12 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         hitColliders = Physics.OverlapSphere(transform.position, AttackRadius);
         foreach (Collider collider in hitColliders)
         {
-            if (collider.gameObject.TryGetComponent<Player>(out player))
+            if (collider.gameObject.TryGetComponent<Player>(out _player))
             {
                 _isPlayerInAttackRange = true;
                 _isPlayerInTriggerRange = true;
                 _isPlayerInSightRange = true;
-                _lastPlayerPosition = player.transform.position;
+                _lastPlayerPosition = _player.transform.position;
                 break;
             }
         }
@@ -102,11 +116,11 @@ public abstract class Enemy : MonoBehaviour, IDamageable
             hitColliders = Physics.OverlapSphere(transform.position, TriggerRadius);
             foreach (Collider collider in hitColliders)
             {
-                if (collider.gameObject.TryGetComponent<Player>(out player))
+                if (collider.gameObject.TryGetComponent<Player>(out _player))
                 {
                     _isPlayerInTriggerRange = true;
                     _isPlayerInSightRange = true;
-                    _lastPlayerPosition = player.transform.position;
+                    _lastPlayerPosition = _player.transform.position;
                     break;
                 }
             }
@@ -117,17 +131,29 @@ public abstract class Enemy : MonoBehaviour, IDamageable
             hitColliders = Physics.OverlapSphere(transform.position, SightRadius);
             foreach (Collider collider in hitColliders)
             {
-                if (collider.gameObject.TryGetComponent<Player>(out player))
+                if (collider.gameObject.TryGetComponent<Player>(out _player))
                 {
                     _isPlayerInSightRange = true;
-                    _lastPlayerPosition = player.transform.position;
+                    _lastPlayerPosition = _player.transform.position;
                     break;
                 }
             }
         }
 
         if (!_isPlayerInSightRange && !_isPlayerInTriggerRange && !_isPlayerInAttackRange)
+        {
             _lastPlayerPosition = Vector3.zero;
-        
-    }    
+            _player = null;
+        }
+    }
+
+    private IEnumerator DamageWithDelay(float delay, IDamageable target)
+    {
+        _canAttack = false;
+        target.Damage(damagePotency);
+        Debug.Log("[Enemy DamageWithDelay] ATTACK DONE");
+        yield return new WaitForSeconds(delay);
+        _canAttack = true;
+    }
+
 }

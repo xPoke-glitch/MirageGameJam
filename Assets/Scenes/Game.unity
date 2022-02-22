@@ -171,6 +171,8 @@ MonoBehaviour:
   TriggerRadius: 10
   AttackRadius: 2
   maxHealth: 20
+  damagePotency: 2
+  attackDelay: 1
   walkSpeed: 3.5
   walkAcceleration: 8
   followSpeed: 3.5

@@ -28,10 +28,13 @@ public class Cactus : Enemy
         // States
         var walking = new WalkingAround(_agent, navPoints, walkSpeed, walkAcceleration);
         var following = new FollowPlayer(_agent, this, followSpeed, followAcceleration);
+        var attack = new AttackPlayer(_agent, this);
 
         // Transitions and Any-Transitions
         _stateMachine.AddTransition(walking, following, () => _isPlayerInTriggerRange);
         _stateMachine.AddTransition(following, walking, () => !_isPlayerInSightRange);
+        _stateMachine.AddTransition(following, attack, () => _isPlayerInAttackRange);
+        _stateMachine.AddTransition(attack, following, () => !_isPlayerInAttackRange && _isPlayerInSightRange);
         
         // Set Initial State
         _stateMachine.SetState(walking);
