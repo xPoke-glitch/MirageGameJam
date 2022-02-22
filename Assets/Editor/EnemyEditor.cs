@@ -10,9 +10,12 @@ public class EnemyEditor : Editor
     {
         Enemy enemy = (Enemy)target;
         Handles.color = Color.red;
-        Handles.DrawWireArc(enemy.transform.position, Vector3.up, Vector3.forward, 360, enemy.EnemyTriggerRadius);
+        Handles.DrawWireArc(enemy.transform.position, Vector3.up, Vector3.forward, 360, enemy.AttackRadius);
+
+        Handles.color = Color.blue;
+        Handles.DrawWireArc(enemy.transform.position, Vector3.up, Vector3.forward, 360, enemy.TriggerRadius);
 
         Handles.color = Color.green;
-        Handles.DrawWireArc(enemy.transform.position, Vector3.up, Vector3.forward, 360, enemy.EnemyFleeRadius);
+        Handles.DrawWireArc(enemy.transform.position, Vector3.up, Vector3.forward, 360, enemy.SightRadius);
     }
 }
