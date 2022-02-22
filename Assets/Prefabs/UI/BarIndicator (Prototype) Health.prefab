@@ -132,6 +132,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 2104738067393547764}
+  border: {fileID: 2104738066223611729}
   damageableCharacterObject: {fileID: 0}
 --- !u!1 &2104738066223611727
 GameObject:

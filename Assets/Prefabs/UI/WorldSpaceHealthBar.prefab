@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8328205018240510737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,10 +240,82 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2104738066129500665, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
+--- !u!1 &7973115475923883501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2104738066129500663, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
+  m_PrefabInstance: {fileID: 8328205016740981786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7973115475923883490 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2104738066129500664, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
   m_PrefabInstance: {fileID: 8328205016740981786}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7973115477058970094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2104738067393547764, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
+  m_PrefabInstance: {fileID: 8328205016740981786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7973115475829248843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2104738066223611729, guid: 4972afb04f33cd44498e5c082078ade3, type: 3}
+  m_PrefabInstance: {fileID: 8328205016740981786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4352287110400179380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973115475923883501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa818f4acaa66b4f951ab2dae74c182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.7176471, g: 0.3764706, b: 0.3764706, a: 1}
+    key1: {r: 0.93333334, g: 0.05882353, b: 0.05882353, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 7973115477058970094}
+  border: {fileID: 7973115475829248843}
+  damageableCharacterObject: {fileID: 0}
