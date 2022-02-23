@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: Pickaxe
   Damage: 5
   AnimationClip: {fileID: 0}
+  MaxUsageTime: 2

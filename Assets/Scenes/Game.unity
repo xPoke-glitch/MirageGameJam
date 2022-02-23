@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -871,11 +871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b56a9c31cb9a6449f13b811f349445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 15
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 64
-  mirageObject: {fileID: 1768677245}
 --- !u!1 &839083115
 GameObject:
   m_ObjectHideFlags: 3
@@ -1269,7 +1264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6631728212779110436, guid: 212202ad6b49f1942a2744bfeea9b67a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6631728212779110436, guid: 212202ad6b49f1942a2744bfeea9b67a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2615,11 +2610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b56a9c31cb9a6449f13b811f349445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 10
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 0
-  mirageObject: {fileID: 0}
 --- !u!1 &2045929242
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,7 +3123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3195098712761856103, guid: 5d396323df4d6774b99d2bdca9d12e55, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3209466688658399489, guid: 5d396323df4d6774b99d2bdca9d12e55, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3269,6 +3259,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699607751188257338, guid: 5d396323df4d6774b99d2bdca9d12e55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428448113848415329, guid: 5d396323df4d6774b99d2bdca9d12e55, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565870145632075190, guid: 5d396323df4d6774b99d2bdca9d12e55, type: 3}
