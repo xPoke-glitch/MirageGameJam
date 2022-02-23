@@ -1,34 +1,57 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer), typeof(Collider))]
 public class Mirage : MonoBehaviour
-{
-    public float Radius; 
+{  
+    [SerializeField]
+    private Collider _collider;
+    [SerializeField]
+    private int minWaterPercentageTrigger;
+    [SerializeField]
+    private int maxWaterPercentageTrigger;
 
-    public LayerMask whatIsPlayer;
+    private MeshRenderer _meshRenderer;
+    private bool _isShowed = false;
+    private int _minWaterThreshold;
+    private int _maxWaterThreshold;
 
-    [SerializeField] 
-    private GameObject mirageObject; // Forest, Arctic, etc
-
-    private bool _itAppeared = false;
-
-    private void Update()
+    public void ShowMirage(int currentWater, int maxWater)
     {
-        if (Physics.CheckSphere(transform.position, Radius, whatIsPlayer))
-            ShowMirage();
-        else
-            RemovesMirage();
+        _minWaterThreshold = minWaterPercentageTrigger * maxWater / 100;
+        _maxWaterThreshold = maxWaterPercentageTrigger * maxWater / 100;
+        if (!_isShowed && (_minWaterThreshold <= currentWater && currentWater <= _maxWaterThreshold))
+        {
+            _isShowed = true;
+            _meshRenderer.enabled = true;
+            _collider.isTrigger = false;
+            FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
+        }
     }
 
-    private void ShowMirage()
+    public void HideMirage(int currentWater, int maxWater)
     {
-        _itAppeared = true;
-        mirageObject.SetActive(true);
+        _minWaterThreshold = minWaterPercentageTrigger * maxWater / 100;
+        _maxWaterThreshold = maxWaterPercentageTrigger * maxWater / 100;
+        if (_isShowed && (!(_minWaterThreshold <= currentWater && currentWater <= _maxWaterThreshold)))
+        {
+            _isShowed = false;
+            _meshRenderer.enabled = false;
+            _collider.isTrigger = true;
+            FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
+        }
     }
 
-    private void RemovesMirage()
+    private void Awake()
     {
-        mirageObject.SetActive(false);
-        if(_itAppeared)
-            Destroy(gameObject);
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _meshRenderer.enabled = false;
     }
+
+    private void Start()
+    {
+       _collider.isTrigger = true;
+    }
+
 }

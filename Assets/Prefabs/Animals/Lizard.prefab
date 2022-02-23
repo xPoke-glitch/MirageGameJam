@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 861a065d172ee6941ba40ff62c3b8a77, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,10 +141,8 @@ MonoBehaviour:
   walkAcceleration: 8
   fleeSpeed: 3
   fleeAcceleration: 20
-  navPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  walkRange: 15
+  layerMask: -1
 --- !u!65 &8681949233620730539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -178,6 +176,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3195098712761856103}
     m_Modifications:
+    - target: {fileID: 4352287110400179380, guid: 09d82bc8e75e5b046b9e63fe6fce8d4d, type: 3}
+      propertyPath: damageableCharacterObject
+      value: 
+      objectReference: {fileID: 4009643577333862354}
     - target: {fileID: 7973115475923883491, guid: 09d82bc8e75e5b046b9e63fe6fce8d4d, type: 3}
       propertyPath: damageableCharacterObject
       value: 

@@ -12,15 +12,22 @@ public class Weapon : MonoBehaviour, IPickable
 
     public static Weapon CurrentWeapon;
 
+    private int _usageTime;
     private static bool _isPickedUp;
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
+    private bool _firstTimeUsage;
+    private bool _canBeUsed;
+    
     
     private void Awake()
     {
         _rb = null;
         _isPickedUp = false;
         CurrentWeapon = null;
+        _usageTime = 0;
+        _firstTimeUsage = false;
+        _canBeUsed = true;
         TryGetComponent<BoxCollider>(out _boxCollider);
     }
 
@@ -37,6 +44,12 @@ public class Weapon : MonoBehaviour, IPickable
     public void PickUp(GameObject player)
     {
         CurrentWeapon = this;
+        if (!_firstTimeUsage) // if never picked up
+        {
+            _firstTimeUsage = true;
+            _usageTime = CurrentWeapon.weaponData.MaxUsageTime;
+        }
+
 
         Transform hand = player.GetComponent<Player>().handToAttachWeapon;
 
@@ -54,13 +67,27 @@ public class Weapon : MonoBehaviour, IPickable
         return CurrentWeapon == null ? 0 : CurrentWeapon.weaponData.Damage;
     }
 
+    public void ReduceUsageTime()
+    {
+        if (!CurrentWeapon) return;
+        _usageTime--;
+        print("USAGE TIME is " + _usageTime);
+        if(_usageTime <= 0)
+        {
+            _canBeUsed = false;
+            Drop();
+            Destroy(this.gameObject, 1f);
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Ground")) // Could change it later to be based on the layer
         {
-            _boxCollider.isTrigger = true;
-            Destroy(gameObject.GetComponent<Rigidbody>());
+            // if it can't be used anymore (usage time <= 0), remove collisions so that it will go through the ground
+            _boxCollider.isTrigger = !_canBeUsed;
+            //Destroy(gameObject.GetComponent<Rigidbody>());
         }
     }
 
@@ -68,6 +95,7 @@ public class Weapon : MonoBehaviour, IPickable
     {
         _isPickedUp = false;
         _rb.isKinematic = false;
+
         _boxCollider.isTrigger = false;
         CurrentWeapon = null;
 

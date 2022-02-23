@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Kukri
   Damage: 50
+  AnimationClip: {fileID: 0}
+  MaxUsageTime: 3

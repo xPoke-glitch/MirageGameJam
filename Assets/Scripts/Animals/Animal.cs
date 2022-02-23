@@ -88,13 +88,14 @@ public abstract class Animal : MonoBehaviour, IDamageable
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         Weapon weapon;
         if(other.gameObject.TryGetComponent<Weapon>(out weapon))
         {
             Debug.Log("[Animal OnTriggerEnter] "+this.name + " health is "+ Health);
             Damage(weapon.GetDamage());
+            weapon.ReduceUsageTime();
         }
     }
 

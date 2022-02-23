@@ -7,4 +7,5 @@ public class WeaponData : ScriptableObject {
     public string Name;
     public int Damage;
     public AnimationClip AnimationClip;
+    public int MaxUsageTime;
 }
