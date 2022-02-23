@@ -7,13 +7,21 @@ public class Mirage : MonoBehaviour
 {  
     [SerializeField]
     private Collider _collider;
-    
+    [SerializeField]
+    private int minWaterPercentageTrigger;
+    [SerializeField]
+    private int maxWaterPercentageTrigger;
+
     private MeshRenderer _meshRenderer;
     private bool _isShowed = false;
+    private int _minWaterThreshold;
+    private int _maxWaterThreshold;
 
-    public void ShowMirage()
+    public void ShowMirage(int currentWater, int maxWater)
     {
-        if (!_isShowed)
+        _minWaterThreshold = minWaterPercentageTrigger * maxWater / 100;
+        _maxWaterThreshold = maxWaterPercentageTrigger * maxWater / 100;
+        if (!_isShowed && (_minWaterThreshold <= currentWater && currentWater <= _maxWaterThreshold))
         {
             _isShowed = true;
             _meshRenderer.enabled = true;
@@ -22,9 +30,11 @@ public class Mirage : MonoBehaviour
         }
     }
 
-    public void HideMirage()
+    public void HideMirage(int currentWater, int maxWater)
     {
-        if (_isShowed)
+        _minWaterThreshold = minWaterPercentageTrigger * maxWater / 100;
+        _maxWaterThreshold = maxWaterPercentageTrigger * maxWater / 100;
+        if (_isShowed && (!(_minWaterThreshold <= currentWater && currentWater <= _maxWaterThreshold)))
         {
             _isShowed = false;
             _meshRenderer.enabled = false;

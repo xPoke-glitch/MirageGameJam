@@ -6,11 +6,6 @@ using UnityEngine;
 public class MirageDetector : MonoBehaviour
 {
     public float Range;
-
-    [SerializeField]
-    private int waterPercentageTrigger;
-
-    private int _waterThreshold;
     private Player _player;
 
     private void Awake()
@@ -20,7 +15,7 @@ public class MirageDetector : MonoBehaviour
 
     void Start()
     {
-        _waterThreshold = waterPercentageTrigger * _player.GetMaxWater() / 100;
+       
     }
 
     void Update()
@@ -30,28 +25,14 @@ public class MirageDetector : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_player.Water <= _waterThreshold)
+        Mirage mirage = null;
+        Collider[] colliders = Physics.OverlapSphere(_player.transform.position, Range);
+        foreach (Collider col in colliders)
         {
-            Mirage mirage = null;
-            Collider[] colliders = Physics.OverlapSphere(_player.transform.position, Range);
-            foreach (Collider col in colliders)
+            if (col.gameObject.TryGetComponent<Mirage>(out mirage))
             {
-                if (col.gameObject.TryGetComponent<Mirage>(out mirage))
-                {
-                    mirage.ShowMirage();
-                }
-            }
-        }
-        else if (_player.Water > _waterThreshold)
-        {
-            Mirage mirage = null;
-            Collider[] colliders = Physics.OverlapSphere(_player.transform.position, Range);
-            foreach (Collider col in colliders)
-            {
-                if (col.gameObject.TryGetComponent<Mirage>(out mirage))
-                {
-                    mirage.HideMirage();
-                }
+                mirage.ShowMirage(_player.Water, _player.GetMaxWater());
+                mirage.HideMirage(_player.Water, _player.GetMaxWater());
             }
         }
     }
