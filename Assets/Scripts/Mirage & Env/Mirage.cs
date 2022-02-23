@@ -22,6 +22,17 @@ public class Mirage : MonoBehaviour
         }
     }
 
+    public void HideMirage()
+    {
+        if (_isShowed)
+        {
+            _isShowed = false;
+            _meshRenderer.enabled = false;
+            _collider.isTrigger = true;
+            FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
+        }
+    }
+
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
