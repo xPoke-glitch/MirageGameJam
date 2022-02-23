@@ -10,6 +10,11 @@ public abstract class Spawner : MonoBehaviour
 
     [SerializeField]
     protected GameObject[] prefabs;
+ /*   [SerializeField]
+    protected float spawnRate; // seconds
+
+    private float _spawnTimer;
+ */
 
     public void Spawn() // 1 object
     {
@@ -19,6 +24,16 @@ public abstract class Spawner : MonoBehaviour
 
         Vector3 spawnPos = RandomPointInRange(this.transform.position, Range);
         Instantiate(prefab, spawnPos, Quaternion.identity);
+    }
+
+    public void SpawnOverTime() // all the objects in the prefabs
+    {
+        // TBD if TODO
+    }
+
+    protected virtual void Update()
+    {
+
     }
 
     protected Vector3 RandomPointInRange(Vector3 origin, float distance, int layermask = -1)

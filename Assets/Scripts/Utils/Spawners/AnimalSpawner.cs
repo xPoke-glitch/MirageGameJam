@@ -11,7 +11,7 @@ public class AnimalSpawner : Spawner
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
