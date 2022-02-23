@@ -141,10 +141,8 @@ MonoBehaviour:
   walkAcceleration: 8
   fleeSpeed: 3
   fleeAcceleration: 20
-  navPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  walkRange: 15
+  layerMask: -1
 --- !u!65 &8681949233620730539
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -14,8 +14,12 @@ public class Mouse : Animal
     private float fleeSpeed;
     [SerializeField]
     private float fleeAcceleration;
+
+    [Header("Navigation AI")]
     [SerializeField]
-    private Transform[] navPoints;
+    private float walkRange;
+    [SerializeField]
+    private int layerMask;
 
     public override void Die()
     {
@@ -27,7 +31,7 @@ public class Mouse : Animal
         // Implementing the state machine (States and Transitions)
 
         // States
-        var walking = new WalkingAround(_agent, navPoints, walkSpeed, walkAcceleration);
+        var walking = new Wander(_agent, walkRange, layerMask, walkSpeed, walkAcceleration);
         var flee = new Flee(_agent, this, fleeSpeed, fleeAcceleration);
 
         // Transitions and Any-Transitions

@@ -142,13 +142,8 @@ MonoBehaviour:
   walkAcceleration: 8
   followSpeed: 3.5
   followAcceleration: 8
-  navPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  walkRange: 15
+  layerMask: -1
 --- !u!1001 &2820513779692214281
 PrefabInstance:
   m_ObjectHideFlags: 0
