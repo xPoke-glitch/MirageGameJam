@@ -1286,10 +1286,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthRegenAmount: 2
   maxFood: 20
   maxWater: 20
   foodDecreaseRate: 4
   waterDecreaseRate: 2
+  healthRegenRate: 1
   handToAttachWeapon: {fileID: 501493156}
 --- !u!114 &888916714
 MonoBehaviour:

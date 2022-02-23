@@ -4,12 +4,14 @@ public class Player : MonoBehaviour, IDamageable
 {
     public int Health { get; private set; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
-    public int Food { get; private set; } // int?
-    public int Water { get; private set; } // int?
+    public int Food { get; private set; } 
+    public int Water { get; private set; }
     
     [Header("General Stats")]
     [SerializeField]
     private int maxHealth;
+    [SerializeField]
+    private int healthRegenAmount;
     [SerializeField]
     private int maxFood;
     [SerializeField]
@@ -18,6 +20,8 @@ public class Player : MonoBehaviour, IDamageable
     private float foodDecreaseRate; // seconds
     [SerializeField]
     private float waterDecreaseRate; // seconds
+    [SerializeField]
+    private int healthRegenRate; // seconds
 
     [Header("References")]
     [SerializeField]
@@ -25,6 +29,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private float _foodTimer;
     private float _waterTimer;
+    private float _regenTimer;
 
     public void Damage(int amount)
     {
@@ -53,8 +58,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         DecreaseFoodOverTime(foodDecreaseRate);
         DecreaseWaterOverTime(waterDecreaseRate);
-        //Debug.Log("[Player Update] Current Food: "+Food);
-        //Debug.Log("[Player Update] Current Water "+Water);
+        RegenHealth(healthRegenRate);
     }
 
     private void DecreaseFoodOverTime(float decreaseRate)
@@ -80,6 +84,22 @@ public class Player : MonoBehaviour, IDamageable
         {
             _waterTimer = 0;
             Water--;
+        }
+    }
+
+    private void RegenHealth(float regenRate)
+    {
+        if (!(Food == maxFood || Water == maxWater))
+            return;
+        if (Health <= 0 || Health == MaxHealth)
+            return;
+
+        _regenTimer += Time.deltaTime;
+
+        if(_regenTimer >= regenRate)
+        {
+            _regenTimer = 0;
+            Health += healthRegenAmount;
         }
     }
 
