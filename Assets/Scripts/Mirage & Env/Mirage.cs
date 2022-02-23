@@ -4,16 +4,22 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer), typeof(Collider))]
 public class Mirage : MonoBehaviour
-{
-    private MeshRenderer _meshRenderer;
-
+{  
     [SerializeField]
     private Collider _collider;
+    
+    private MeshRenderer _meshRenderer;
+    private bool _isShowed = false;
 
     public void ShowMirage()
     {
-        _meshRenderer.enabled = true;
-        _collider.isTrigger = false;
+        if (!_isShowed)
+        {
+            _isShowed = true;
+            _meshRenderer.enabled = true;
+            _collider.isTrigger = false;
+            FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
+        }
     }
 
     private void Awake()
