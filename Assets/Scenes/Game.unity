@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 10
-  waterPercentageTrigger: 90
+  waterPercentageTrigger: 50
 --- !u!224 &948690987 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2169312499055904411, guid: 4f56e7614124c31448a7751d088cfe30, type: 3}
