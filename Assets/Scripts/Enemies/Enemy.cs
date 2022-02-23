@@ -155,6 +155,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         {
             Debug.Log("[Enemy OnTriggerEnter] " + this.name + " health is " + Health);
             Damage(weapon.GetDamage());
+            weapon.ReduceUsageTime();
         }
     }
 

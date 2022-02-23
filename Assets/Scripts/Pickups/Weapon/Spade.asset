@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Spade
   Damage: 5
+  AnimationClip: {fileID: 0}
+  MaxUsageTime: 1
