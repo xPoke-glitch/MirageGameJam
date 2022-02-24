@@ -13,6 +13,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private int healthRegenAmount;
     [SerializeField]
+    private int healthDamageAmount; // when food = 0
+    [SerializeField]
     private int maxFood;
     [SerializeField]
     private int maxWater;
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour, IDamageable
     private float waterDecreaseRate; // seconds
     [SerializeField]
     private int healthRegenRate; // seconds
+    [SerializeField]
+    private int healtDamageRate; // seconds
 
     [Header("References")]
     [SerializeField]
@@ -30,6 +34,7 @@ public class Player : MonoBehaviour, IDamageable
     private float _foodTimer;
     private float _waterTimer;
     private float _regenTimer;
+    private float _damageTimer;
 
     public void Damage(int amount)
     {
@@ -59,6 +64,7 @@ public class Player : MonoBehaviour, IDamageable
         DecreaseFoodOverTime(foodDecreaseRate);
         DecreaseWaterOverTime(waterDecreaseRate);
         RegenHealth(healthRegenRate);
+        DamageHealthOverTime(healtDamageRate);
     }
 
     private void DecreaseFoodOverTime(float decreaseRate)
@@ -100,6 +106,22 @@ public class Player : MonoBehaviour, IDamageable
         {
             _regenTimer = 0;
             Health += healthRegenAmount;
+        }
+    }
+
+    private void DamageHealthOverTime(float damageRate)
+    {
+        if (!(Food == 0))
+            return;
+        if (Health <= 0)
+            return;
+
+        _damageTimer += Time.deltaTime;
+
+        if (_damageTimer >= damageRate)
+        {
+            _damageTimer = 0;
+            Health -= healthDamageAmount;
         }
     }
 
