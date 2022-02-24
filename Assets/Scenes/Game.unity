@@ -1245,6 +1245,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2918791416847782331, guid: 0d05988fe2f088e44a00cca7bfe6c231, type: 3}
   m_PrefabInstance: {fileID: 2918791416823430915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &608314435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4009643577333862354, guid: fdd84f7142fb78c42baa14b0b1e836c2, type: 3}
+  m_PrefabInstance: {fileID: 350622495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,7 +3749,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 10
   prefabs:
+  - {fileID: 608314435}
   - {fileID: 1022846931}
+  spawnRate: 10
 --- !u!4 &2094260957
 Transform:
   m_ObjectHideFlags: 0

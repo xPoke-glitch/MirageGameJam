@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimalSpawner : Spawner
+public class EnemySpawner : Spawner
 {
     [SerializeField]
     private float spawnRate;
