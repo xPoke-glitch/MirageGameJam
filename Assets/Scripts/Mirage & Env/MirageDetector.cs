@@ -26,6 +26,7 @@ public class MirageDetector : MonoBehaviour
     private void FixedUpdate()
     {
         Mirage mirage = null;
+        MirageSpawner spawner = null;
         Collider[] colliders = Physics.OverlapSphere(_player.transform.position, Range);
         foreach (Collider col in colliders)
         {
@@ -33,6 +34,11 @@ public class MirageDetector : MonoBehaviour
             {
                 mirage.ShowMirage(_player.Water, _player.GetMaxWater());
                 mirage.HideMirage(_player.Water, _player.GetMaxWater());
+            }
+            else if(col.gameObject.TryGetComponent<MirageSpawner>(out spawner))
+            {
+                spawner.ShowMirage(_player.Water, _player.GetMaxWater());
+                spawner.HideMirage(_player.Water, _player.GetMaxWater());
             }
         }
     }
