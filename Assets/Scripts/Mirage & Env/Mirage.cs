@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer), typeof(Collider))]
-public class Mirage : MonoBehaviour
+public class MouseMirage : MonoBehaviour
 {  
     [SerializeField]
     private Collider _collider;
