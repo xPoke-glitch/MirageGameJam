@@ -9,6 +9,7 @@ namespace Assets.Scripts.Animals.Mirage
         public override void Die()
         {
             if (!isAlive) return;
+            FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
             isAlive = false;
             Destroy(this.gameObject);
         }
