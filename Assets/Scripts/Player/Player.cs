@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    public static event Action OnGameOver;
+
     public int Health { get; private set; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public int Food { get; private set; } 
@@ -49,7 +52,7 @@ public class Player : MonoBehaviour, IDamageable
     }
     public void Die()
     {
-        // Do something when the player Dies
+        OnGameOver?.Invoke();
     }
 
     void Start()
