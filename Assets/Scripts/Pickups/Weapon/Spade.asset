@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba627bf293231284dae43ef1402ba2a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fe590768edb5ca459ca49eee0382032, type: 3}
   m_Name: Spade
   m_EditorClassIdentifier: 
   Name: Spade
-  Damage: 5
-  AnimationClip: {fileID: 0}
-  MaxUsageTime: 1
+  Damage: 10
+  AttackRange: 2
+  AttackDelay: 1
+  MaxDurability: 10
+  Model: {fileID: 8638566935577673360, guid: d2ec03ce208818a4483ab47aaa33bed7, type: 3}
+  PickablePrefab: {fileID: 6631728212779110617, guid: 2b5e1575b7316fc4b805d137513eaf1e, type: 3}

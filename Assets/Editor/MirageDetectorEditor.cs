@@ -9,7 +9,7 @@ public class MirageDetectorEditor : Editor
     private void OnSceneGUI()
     {
         MirageDetector mirageDetector = (MirageDetector)target;
-        Handles.color = Color.red;
+        Handles.color = Color.blue;
         Handles.DrawWireArc(mirageDetector.transform.position, Vector3.up, Vector3.forward, 360, mirageDetector.Range);
     }
 }

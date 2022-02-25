@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/SpawnWeapon", order = 2)]
-public class WeaponData : ScriptableObject {
+[CreateAssetMenu(menuName = "Weapon Data")]
+public class WeaponData : ScriptableObject
+{
     public string Name;
     public int Damage;
-    public AnimationClip AnimationClip;
-    public int MaxUsageTime;
+    public float AttackRange;
+    public float AttackDelay;
+    public int MaxDurability;
+    public GameObject Model;
+    public GameObject PickablePrefab;
 }

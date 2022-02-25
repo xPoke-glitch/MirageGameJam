@@ -88,7 +88,7 @@ public abstract class Animal : MonoBehaviour, IDamageable
         }
     }
 
-    protected void OnTriggerEnter(Collider other)
+  /*  protected void OnTriggerEnter(Collider other)
     {
         Weapon weapon;
         if(other.gameObject.TryGetComponent<Weapon>(out weapon))
@@ -98,6 +98,6 @@ public abstract class Animal : MonoBehaviour, IDamageable
             weapon.ReduceUsageTime();
         }
     }
-
+  */
     public abstract void Die();
 }

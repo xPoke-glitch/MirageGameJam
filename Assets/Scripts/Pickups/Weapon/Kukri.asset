@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba627bf293231284dae43ef1402ba2a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fe590768edb5ca459ca49eee0382032, type: 3}
   m_Name: Kukri
   m_EditorClassIdentifier: 
   Name: Kukri
-  Damage: 50
-  AnimationClip: {fileID: 0}
-  MaxUsageTime: 3
+  Damage: 10
+  AttackRange: 2
+  AttackDelay: 1
+  MaxDurability: 10
+  Model: {fileID: 5454624148356850221, guid: c001b90ca6cc36f42b2d39fd811a98fe, type: 3}
+  PickablePrefab: {fileID: 6631728212779110617, guid: 3b7d5c5574fa13a429ebe0ded0640ad4, type: 3}

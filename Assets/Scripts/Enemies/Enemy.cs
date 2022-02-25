@@ -150,7 +150,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         Weapon weapon;
         if (other.gameObject.TryGetComponent<Weapon>(out weapon))
@@ -159,7 +159,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
             Damage(weapon.GetDamage());
             weapon.ReduceUsageTime();
         }
-    }
+    }*/
 
     private IEnumerator DamageWithDelay(float delay, IDamageable target)
     {

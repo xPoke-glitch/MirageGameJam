@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba627bf293231284dae43ef1402ba2a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fe590768edb5ca459ca49eee0382032, type: 3}
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   Name: Pickaxe
-  Damage: 5
-  AnimationClip: {fileID: 0}
-  MaxUsageTime: 2
+  Damage: 10
+  AttackRange: 2
+  AttackDelay: 1
+  MaxDurability: 10
+  Model: {fileID: 6994868329150815419, guid: 44b68f5bf93bc87448557ff2f3d8b6e9, type: 3}
+  PickablePrefab: {fileID: 6631728212779110617, guid: c88d4df69f2e8ad4c990617e6ca5b3c5, type: 3}
