@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 6276907803653299992}
   - component: {fileID: 6276907803653299430}
   - component: {fileID: 6276907803653299431}
-  - component: {fileID: 6276907803653299428}
-  - component: {fileID: 1784948442502058396}
-  - component: {fileID: 1463334620794087254}
+  - component: {fileID: 2706503670844186688}
   m_Layer: 0
   m_Name: Vulture
   m_TagString: Untagged
@@ -57,8 +55,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9450426, y: 1.6084247, z: 1}
-  m_Center: {x: -0.027478695, y: 2.55431, z: 0}
+  m_Size: {x: 0.9450426, y: 3.7316055, z: 1}
+  m_Center: {x: -0.027478695, y: 1.4927197, z: 0}
 --- !u!195 &6276907803653299431
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -81,7 +79,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6276907803653299428
+--- !u!114 &2706503670844186688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,44 +88,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6276907803653299429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4feb28edd643bf541a67a1ac4802e131, type: 3}
+  m_Script: {fileID: 11500000, guid: 991f7d09beab90f47b8f32cb33d4cae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 10
   maxHealth: 20
-  foodDrop: {fileID: 11400000, guid: acde2a979ed62ce4f82d57e06ff6d47b, type: 2}
+  foodDrop: {fileID: 0}
   walkSpeed: 6
   walkAcceleration: 12
   fleeSpeed: 6
   fleeAcceleration: 20
-  walkRange: 15
+  walkRange: 20
   layerMask: -1
---- !u!65 &1784948442502058396
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6276907803653299429}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9159479, y: 1.5996377, z: 1}
-  m_Center: {x: 0.042026043, y: 2.5040507, z: 0}
---- !u!65 &1463334620794087254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6276907803653299429}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9159479, y: 1.556833, z: 1}
-  m_Center: {x: 0.042026043, y: 2.5276556, z: 0}
 --- !u!1001 &4632680542834300014
 PrefabInstance:
   m_ObjectHideFlags: 0
