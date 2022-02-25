@@ -52,6 +52,7 @@ public class Player : MonoBehaviour, IDamageable
     }
     public void Die()
     {
+        Debug.Log("DEAD");
         OnGameOver?.Invoke();
     }
 
@@ -124,7 +125,7 @@ public class Player : MonoBehaviour, IDamageable
         if (_damageTimer >= damageRate)
         {
             _damageTimer = 0;
-            Health -= healthDamageAmount;
+            Damage(healthDamageAmount);
         }
     }
 
