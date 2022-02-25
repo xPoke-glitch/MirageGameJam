@@ -20,6 +20,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     protected int damagePotency;
     [SerializeField]
     protected float attackDelay;
+    [SerializeField]
+    private Animator animator;
 
     protected bool isAlive = true;
     protected bool _isPlayerInSightRange;
@@ -163,6 +165,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     {
         _canAttack = false;
         target.Damage(damagePotency);
+        animator.SetTrigger("Attack");
         Debug.Log("[Enemy DamageWithDelay] ATTACK DONE");
         yield return new WaitForSeconds(delay);
         _canAttack = true;

@@ -139,6 +139,7 @@ MonoBehaviour:
   maxHealth: 20
   damagePotency: 2
   attackDelay: 1
+  animator: {fileID: 401375679588738824}
   walkSpeed: 3.5
   walkAcceleration: 8
   followSpeed: 3.5
@@ -327,5 +328,10 @@ PrefabInstance:
 --- !u!4 &151785865766805874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3070013643879608671, guid: e8f44c98e12995542b40483d0b18b200, type: 3}
+  m_PrefabInstance: {fileID: 2918791417440456749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &401375679588738824 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3247192473740605221, guid: e8f44c98e12995542b40483d0b18b200, type: 3}
   m_PrefabInstance: {fileID: 2918791417440456749}
   m_PrefabAsset: {fileID: 0}
