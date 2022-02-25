@@ -20,6 +20,11 @@ public class GameSceneManager : MonoBehaviour
         ChangeSceneWithDelay("GameOver", 2.0f);
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     public void ChangeScene(string name)
     {
         ChangeSceneWithDelay(name, 0.0f);
