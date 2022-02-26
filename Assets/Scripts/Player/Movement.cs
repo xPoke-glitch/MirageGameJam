@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public bool IsMoving { get; private set; }
     [Header("Movement Settings")]
     [SerializeField] protected float walkSpeed = 6f;
     [SerializeField] private float rotationSpeed = 3f;
 
-
     protected CharacterController controller;
     private float minMagnitude = 0.01f;
-
 
     private void Awake()
     {
@@ -27,6 +26,15 @@ public class Movement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+
+        if(horizontalInput!=0 || verticalInput != 0)
+        {
+            IsMoving = true;
+        }
+        else
+        {
+            IsMoving = false;
+        }
 
         StartMoving(horizontalInput, verticalInput);
     }
