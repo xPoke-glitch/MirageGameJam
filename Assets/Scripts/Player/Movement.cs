@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public bool IsMoving { get; private set; }
     [Header("Movement Settings")]
     [SerializeField] protected float walkSpeed = 6f;
+    [SerializeField] protected float runSpeed = 10f;
     [SerializeField] private float rotationSpeed = 3f;
 
     protected CharacterController controller;
@@ -43,7 +44,14 @@ public class Movement : MonoBehaviour
     protected void StartMoving(float horizontalInput, float verticalInput)
     {
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        controller.SimpleMove(movementDirection * walkSpeed);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.SimpleMove(movementDirection * runSpeed);
+        }
+        else
+        {
+            controller.SimpleMove(movementDirection * walkSpeed);
+        }
         Vector3 normalizedMovementDirection = movementDirection.normalized;
         if (normalizedMovementDirection.magnitude > minMagnitude)
         {
