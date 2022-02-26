@@ -14,7 +14,7 @@ public class Mirage : MonoBehaviour
 
     private MeshRenderer _meshRenderer;
     private bool _isShowed = false;
-    [SerializeField] bool _areaWithTrees = false;
+    [SerializeField] GameObject _mirageAreaToView;
     private int _minWaterThreshold;
     private int _maxWaterThreshold;
 
@@ -26,13 +26,8 @@ public class Mirage : MonoBehaviour
         {
             _isShowed = true;
             _meshRenderer.enabled = true;
-            if (_areaWithTrees)
-            {
-                foreach (Transform child in transform)
-                {
-                    child.GetComponent<MeshRenderer>().enabled = true;
-                }
-            }
+            _mirageAreaToView.SetActive(true);
+
             _collider.isTrigger = false;
             FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
         }
@@ -46,13 +41,8 @@ public class Mirage : MonoBehaviour
         {
             _isShowed = false;
             _meshRenderer.enabled = false;
-            if (_areaWithTrees)
-            {
-                foreach (Transform child in transform)
-                {
-                    child.GetComponent<MeshRenderer>().enabled = false;
-                }
-            }
+            _mirageAreaToView.SetActive(false);
+
             _collider.isTrigger = true;
             FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
         }
@@ -63,13 +53,7 @@ public class Mirage : MonoBehaviour
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshRenderer.enabled = false;
 
-        if (_areaWithTrees)
-        {
-            foreach (Transform child in transform)
-            {
-                child.GetComponent<MeshRenderer>().enabled = false;
-            }
-        }
+        _mirageAreaToView.SetActive(false);
     }
 
     private void Start()
