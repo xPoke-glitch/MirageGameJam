@@ -172,7 +172,7 @@ MonoBehaviour:
     min: -200
     max: 200
   blueOutBlueIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 100
     min: -200
     max: 200
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 1, g: 0, b: 0, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -241,7 +241,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.444
+    m_Value: 0.293
     min: 0
     max: 1
   smoothness:

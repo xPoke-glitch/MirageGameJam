@@ -8,13 +8,34 @@ ModelImporter:
     second: metarig.001|BodyAction
   - first:
       74: 7476532711894300287
-    second: metarig.001|Eli_Walk
+    second: Eli_Walk (1)
   - first:
       74: 6234747626553001210
     second: Backpack|BodyAction
   - first:
       74: 7349152069029165227
     second: Backpack|Eli_Backpack
+  - first:
+      74: -6706810698056344388
+    second: metarig.001|Eli_Hurt
+  - first:
+      74: 6162999493458634569
+    second: metarig.001|Eli_Attack
+  - first:
+      74: 7952320283192682321
+    second: Eli_Walk
+  - first:
+      74: -8099997191824136674
+    second: Eli_Backpack
+  - first:
+      74: -6158388850171467281
+    second: Eli_Hurt
+  - first:
+      74: 9158357660052784257
+    second: Eli_Attack
+  - first:
+      74: 3089382046721010608
+    second: Eli_Idle
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -49,7 +70,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig.001|Eli_Walk
+      name: Eli_Walk
       takeName: metarig.001|Eli_Walk
       internalID: 0
       firstFrame: 0
@@ -78,8 +99,95 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Backpack|Eli_Backpack
+      name: Eli_Backpack
       takeName: Backpack|Eli_Backpack
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eli_Hurt
+      takeName: metarig.001|Eli_Hurt
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eli_Attack
+      takeName: metarig.001|Eli_Attack
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eli_Idle
+      takeName: metarig.001|Eli_Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 25
