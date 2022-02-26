@@ -5,6 +5,7 @@ using UnityEngine;
 public class EquippedWeapon : MonoBehaviour
 {
     public bool IsEquipped { get; private set; }
+    public bool IsAttacking { get; private set; }
     public float AttackRange;
 
     [SerializeField] private WeaponData weaponData;
@@ -99,8 +100,10 @@ public class EquippedWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
+        IsAttacking = false;
         if(IsEquipped && Input.GetKeyDown(KeyCode.Mouse0) && _canAttack)
         {
+            IsAttacking = true;
             _canAttack = false;
             _durability--;
 

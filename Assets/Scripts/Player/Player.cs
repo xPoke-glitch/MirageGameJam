@@ -30,10 +30,6 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private int healtDamageRate; // seconds
 
-    [Header("References")]
-    [SerializeField]
-    public Transform handToAttachWeapon; 
-
     private float _foodTimer;
     private float _waterTimer;
     private float _regenTimer;
