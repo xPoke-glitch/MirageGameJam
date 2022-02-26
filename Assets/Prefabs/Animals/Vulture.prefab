@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 10
   maxHealth: 20
-  foodDrop: {fileID: 0}
+  foodDrop: {fileID: 11400000, guid: ecd150bcc16560a4a9a4ab56e3316763, type: 2}
   walkSpeed: 6
   walkAcceleration: 12
   fleeSpeed: 6

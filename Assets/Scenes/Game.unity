@@ -761,7 +761,7 @@ MonoBehaviour:
   _collider: {fileID: 449878322}
   minWaterPercentageTrigger: 0
   maxWaterPercentageTrigger: 50
-  _areaWithTrees: 0
+  _mirageAreaToView: {fileID: 0}
 --- !u!1 &471886234
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
   _collider: {fileID: 471886236}
   minWaterPercentageTrigger: 0
   maxWaterPercentageTrigger: 50
-  _areaWithTrees: 0
+  _mirageAreaToView: {fileID: 0}
 --- !u!65 &471886236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1933,7 +1933,7 @@ MonoBehaviour:
   _collider: {fileID: 1269030677}
   minWaterPercentageTrigger: 0
   maxWaterPercentageTrigger: 50
-  _areaWithTrees: 0
+  _mirageAreaToView: {fileID: 0}
 --- !u!1001 &1286046177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2452,7 +2452,7 @@ MonoBehaviour:
   _collider: {fileID: 1588713278}
   minWaterPercentageTrigger: 0
   maxWaterPercentageTrigger: 50
-  _areaWithTrees: 0
+  _mirageAreaToView: {fileID: 0}
 --- !u!65 &1588713278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3173,7 +3173,7 @@ MonoBehaviour:
   _collider: {fileID: 1966510909}
   minWaterPercentageTrigger: 0
   maxWaterPercentageTrigger: 50
-  _areaWithTrees: 0
+  _mirageAreaToView: {fileID: 0}
 --- !u!1 &2045929242
 GameObject:
   m_ObjectHideFlags: 0
