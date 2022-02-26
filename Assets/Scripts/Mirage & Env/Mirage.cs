@@ -25,7 +25,7 @@ public class Mirage : MonoBehaviour
         if (!_isShowed && (_minWaterThreshold <= currentWater && currentWater <= _maxWaterThreshold))
         {
             _isShowed = true;
-            _meshRenderer.enabled = true;
+            //_meshRenderer.enabled = true;
             _mirageAreaToView.SetActive(true);
 
             _collider.isTrigger = false;
@@ -40,7 +40,7 @@ public class Mirage : MonoBehaviour
         if (_isShowed && (!(_minWaterThreshold <= currentWater && currentWater <= _maxWaterThreshold)))
         {
             _isShowed = false;
-            _meshRenderer.enabled = false;
+            //_meshRenderer.enabled = false;
             _mirageAreaToView.SetActive(false);
 
             _collider.isTrigger = true;
@@ -50,8 +50,8 @@ public class Mirage : MonoBehaviour
 
     private void Awake()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
-        _meshRenderer.enabled = false;
+        //_meshRenderer = GetComponent<MeshRenderer>();
+        //_meshRenderer.enabled = false;
 
         _mirageAreaToView.SetActive(false);
     }
