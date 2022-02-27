@@ -58,6 +58,7 @@ public class Player : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log("DEAD");
+        audioHandlerScriptRef.PlayDeathSound();
         OnGameOver?.Invoke();
     }
 
