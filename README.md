@@ -5,6 +5,12 @@
 
 <img src="https://github.com/xPoke-glitch/MirageGameJam/blob/New-Main/Images/MirageMainMenu.png" width="750">
 
-Brackeys Game Jam 2022
-
 ## The game
+
+## Requirements
+
+If you only want to run the game and play:
+* Windows 64bit or Browser
+
+If you want to open, edit or see the Unity project:
+* Unity 2020.3.20f1 (or greater)
