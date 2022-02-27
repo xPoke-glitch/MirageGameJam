@@ -2289,7 +2289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2141921604311516826, guid: 7a0d938532fd2394497b9f2fc69c1007, type: 3}
       propertyPath: spawnRate
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2141921604311516826, guid: 7a0d938532fd2394497b9f2fc69c1007, type: 3}
       propertyPath: prefabs.Array.data[0]
