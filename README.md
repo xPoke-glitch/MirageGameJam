@@ -38,6 +38,9 @@ The commands are really simple:
 * Left click: Drop weapon
 
 ## Gameplay example
+This is an example that shows you how the game looks like. In this scene the player is just walking around in the desert. 
+
+<img src="https://github.com/xPoke-glitch/MirageGameJam/blob/New-Main/Images/MirageGif.gif" width="750">
 
 ## Team
 
