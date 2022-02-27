@@ -59,4 +59,4 @@ This is an example that shows you how the game looks like. In this scene the pla
 * MkMusic: https://instagram.com/mk.game.audio/
 
 **SFX**
-* Rae:
+* Rickileigh: https://www.instagram.com/synthyloops/
