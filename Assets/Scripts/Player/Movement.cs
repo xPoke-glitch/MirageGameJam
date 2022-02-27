@@ -11,11 +11,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 3f;
 
     protected CharacterController controller;
+    PlayerAudioHandler playerAudioRef;
     private float minMagnitude = 0.01f;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        playerAudioRef = GetComponent<PlayerAudioHandler>();
     }
 
     private void Update()
@@ -30,10 +32,20 @@ public class Movement : MonoBehaviour
 
         if(horizontalInput!=0 || verticalInput != 0)
         {
+            if (!IsMoving)
+            {
+                playerAudioRef.PlayWalkSound();
+                playerAudioRef.LoopAudio();
+            }
             IsMoving = true;
         }
         else
         {
+            if (IsMoving)
+            {
+                playerAudioRef.StopAudio();
+                playerAudioRef.StopLoopingAudio();
+            }
             IsMoving = false;
         }
 
