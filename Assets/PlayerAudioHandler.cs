@@ -16,10 +16,6 @@ public class PlayerAudioHandler : MonoBehaviour
     [SerializeField] AudioClip[] eatSoundClips;
     [SerializeField] AudioClip[] drinkSoundClips;
 
-
-
-
-
     public void StopAudio()
     {
         audioRef.Stop();

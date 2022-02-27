@@ -18,6 +18,13 @@ public class Mirage : MonoBehaviour
     private int _minWaterThreshold;
     private int _maxWaterThreshold;
 
+    [SerializeField]
+    private AudioClip desertMusic;
+    [SerializeField]
+    private AudioClip mirageMusic;
+    [SerializeField]
+    private AudioSource source;
+
     public void ShowMirage(int currentWater, int maxWater)
     {
         _minWaterThreshold = minWaterPercentageTrigger * maxWater / 100;
@@ -27,6 +34,10 @@ public class Mirage : MonoBehaviour
             _isShowed = true;
             //_meshRenderer.enabled = true;
             _mirageAreaToView.SetActive(true);
+
+            source.Stop();
+            source.clip = mirageMusic;
+            source.Play();
 
             _collider.isTrigger = false;
             FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
@@ -42,6 +53,10 @@ public class Mirage : MonoBehaviour
             _isShowed = false;
             //_meshRenderer.enabled = false;
             _mirageAreaToView.SetActive(false);
+
+            source.Stop();
+            source.clip = desertMusic;
+            source.Play();
 
             _collider.isTrigger = true;
             FindObjectOfType<CameraBlurEffect>().PlayBlurEffect();
