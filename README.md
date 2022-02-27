@@ -6,6 +6,18 @@
 <img src="https://github.com/xPoke-glitch/MirageGameJam/blob/New-Main/Images/MirageMainMenu.png" width="750">
 
 ## The game
+Survive this in depth environment for as long as you can!
+
+Search around and you will find useful items like spare weapons to fight off the enemies you will encounter throughout your travels. 
+
+You will find stashed canteens and various consumables to keep you going for longer!!
+
+Find wild animals and take them down for food!! 
+
+Keep your stat bars up so that you don't go crazy!!
+
+The lower they become the more mirages will start to appear around you.
+Good luck!
 
 ## Requirements
 
