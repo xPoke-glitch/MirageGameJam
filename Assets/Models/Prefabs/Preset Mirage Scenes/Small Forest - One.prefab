@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1172282624940158514}
   - component: {fileID: 1172282624940158517}
   - component: {fileID: 1172282624940158516}
+  - component: {fileID: 3305431303736053623}
   m_Layer: 0
   m_Name: Plane.012|model_polytope_snow_fern01.008|Dupli|104.1 (1)
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3305431303736053623
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172282624940158519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1374102584784120944, guid: b73b0cd3f627cf643b0ba57813cd488d, type: 3}
 --- !u!1 &1172282625141342912
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 1172282625141342927}
   - component: {fileID: 1172282625141342926}
   - component: {fileID: 1172282625141342913}
+  - component: {fileID: 6328395059564278687}
   m_Layer: 0
   m_Name: Plane.012|model_polytope_snow_fern01.009|Dupli|105.1 (1)
   m_TagString: Untagged
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6328395059564278687
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172282625141342912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3866056325526212878, guid: b73b0cd3f627cf643b0ba57813cd488d, type: 3}
 --- !u!1 &1172282626060001703
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +203,7 @@ GameObject:
   - component: {fileID: 1172282626060001698}
   - component: {fileID: 1172282626060001701}
   - component: {fileID: 1172282626060001700}
+  - component: {fileID: 3984694141745576447}
   m_Layer: 0
   m_Name: Plane.012|model_polytope_snow_fern01.008|Dupli|104.1 (2)
   m_TagString: Untagged
@@ -243,6 +274,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3984694141745576447
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172282626060001703}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1374102584784120944, guid: b73b0cd3f627cf643b0ba57813cd488d, type: 3}
 --- !u!1 &1172282626066026620
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +299,7 @@ GameObject:
   - component: {fileID: 1172282626066026619}
   - component: {fileID: 1172282626066026618}
   - component: {fileID: 1172282626066026621}
+  - component: {fileID: 3700990993605909518}
   m_Layer: 0
   m_Name: Plane.012|model_polytope_snow_fern01.009|Dupli|105.1 (3)
   m_TagString: Untagged
@@ -324,6 +370,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3700990993605909518
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172282626066026620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3866056325526212878, guid: b73b0cd3f627cf643b0ba57813cd488d, type: 3}
 --- !u!1 &1172282626367560991
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +395,7 @@ GameObject:
   - component: {fileID: 1172282626367560986}
   - component: {fileID: 1172282626367560989}
   - component: {fileID: 1172282626367560988}
+  - component: {fileID: 9222261543787322562}
   m_Layer: 0
   m_Name: Plane.012|model_polytope_snow_fern01.009|Dupli|105.1 (2)
   m_TagString: Untagged
@@ -405,6 +466,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9222261543787322562
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172282626367560991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3866056325526212878, guid: b73b0cd3f627cf643b0ba57813cd488d, type: 3}
 --- !u!1 &1172282626422863798
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,8 +507,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172282626422863798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.037, z: -0}
-  m_LocalScale: {x: 1, y: 0.42894882, z: 1}
+  m_LocalPosition: {x: 0, y: 0.023, z: -0.001}
+  m_LocalScale: {x: 1, y: 0.59207994, z: 1}
   m_Children: []
   m_Father: {fileID: 6799858492444934058}
   m_RootOrder: 0
@@ -512,6 +587,7 @@ GameObject:
   - component: {fileID: 1172282626552246909}
   - component: {fileID: 1172282626552246908}
   - component: {fileID: 1172282626552246911}
+  - component: {fileID: 3568450355718341762}
   m_Layer: 0
   m_Name: Plane.012|model_polytope_snow_fern01.008|Dupli|104.1 (3)
   m_TagString: Untagged
@@ -582,6 +658,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3568450355718341762
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172282626552246910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1374102584784120944, guid: b73b0cd3f627cf643b0ba57813cd488d, type: 3}
 --- !u!1 &1723384342256048614
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +697,7 @@ Transform:
   m_GameObject: {fileID: 1723384342256048614}
   m_LocalRotation: {x: 0.055042546, y: -0.97710365, z: 0.025212154, w: 0.20396869}
   m_LocalPosition: {x: 254.7, y: 95.5, z: 38.4}
-  m_LocalScale: {x: 10.584465, y: 17.843174, z: 12.544858}
+  m_LocalScale: {x: 0.123314135, y: 0.20788157, z: 0.14615366}
   m_Children:
   - {fileID: 611963461979450167}
   - {fileID: 1379008221445546570}
