@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4240515815541655880}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.78, y: 10.88, z: -119.02}
   m_LocalScale: {x: 2.518746, y: 2.518746, z: 2.518746}
   m_Children:
@@ -70,11 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418abcccf4a4ca14c93209f702ec552e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SightRadius: 20
-  TriggerRadius: 10
-  AttackRadius: 2
-  maxHealth: 20
-  damagePotency: 5
+  SightRadius: 29.31
+  TriggerRadius: 17.2
+  AttackRadius: 4.5
+  maxHealth: 40
+  damagePotency: 10
   attackDelay: 1
   animator: {fileID: 4240515814670885506}
   walkSpeed: 3.5

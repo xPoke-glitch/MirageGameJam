@@ -816,6 +816,9 @@ MonoBehaviour:
   minWaterPercentageTrigger: 0
   maxWaterPercentageTrigger: 50
   _mirageAreaToView: {fileID: 8385629231836406111}
+  desertMusic: {fileID: 0}
+  mirageMusic: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &3995093985723323448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +1980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2141921604311516826, guid: 7a0d938532fd2394497b9f2fc69c1007, type: 3}
       propertyPath: prefabs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2141921604311516826, guid: 7a0d938532fd2394497b9f2fc69c1007, type: 3}
       propertyPath: prefabs.Array.data[0]
@@ -1987,6 +1990,10 @@ PrefabInstance:
       propertyPath: prefabs.Array.data[1]
       value: 
       objectReference: {fileID: 4009643577333862354, guid: fdd84f7142fb78c42baa14b0b1e836c2, type: 3}
+    - target: {fileID: 2141921604311516826, guid: 7a0d938532fd2394497b9f2fc69c1007, type: 3}
+      propertyPath: prefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4240515815541655880, guid: 34daaa542c811234a82879096ec6558c, type: 3}
     - target: {fileID: 2141921604311516827, guid: 7a0d938532fd2394497b9f2fc69c1007, type: 3}
       propertyPath: m_RootOrder
       value: 1
