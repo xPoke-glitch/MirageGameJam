@@ -14,3 +14,13 @@ If you only want to run the game and play:
 
 If you want to open, edit or see the Unity project:
 * Unity 2020.3.20f1 (or greater)
+
+## How to play
+
+You can play or download the game from here: https://acemoisan.itch.io/mirage-game-jam-20221
+
+The commands are really simple:
+* W/A/S/D: Walk
+* W/A/S/D + SHIFT: Run
+* Right click: Use weapon
+* Left click: Drop weapon
