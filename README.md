@@ -24,3 +24,24 @@ The commands are really simple:
 * W/A/S/D + SHIFT: Run
 * Right click: Use weapon
 * Left click: Drop weapon
+
+## Gameplay example
+
+## Team
+
+**Developers**:
+* Katerina: https://github.com/unriale / https://unriale.itch.io/
+* Cristian: https://github.com/xPoke-glitch / https://pokedev.itch.io/
+* Aiden: https://github.com/Acemoisan / https://acemoisan.itch.io/
+
+**3D Modeling and Animations**
+* Aiden: https://github.com/Acemoisan / https://acemoisan.itch.io/
+
+**UI/UX**
+Justin: https://github.com/BitsEnBytes / https://justinruel.itch.io/
+
+**Music**
+MkMusic: https://instagram.com/mk.game.audio/
+
+**SFX**
+Rae:
