@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Kukri
   Damage: 10
-  AttackRange: 2
-  AttackDelay: 1
+  AttackRange: 6
+  AttackDelay: 0.5
   MaxDurability: 10
   Model: {fileID: 5454624148356850221, guid: c001b90ca6cc36f42b2d39fd811a98fe, type: 3}
   PickablePrefab: {fileID: 6631728212779110617, guid: 3b7d5c5574fa13a429ebe0ded0640ad4, type: 3}

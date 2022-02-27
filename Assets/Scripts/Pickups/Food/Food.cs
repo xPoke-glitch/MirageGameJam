@@ -30,6 +30,7 @@ public class Food : MonoBehaviour, IPickable
     public void PickUp(GameObject player)
     {
         player.GetComponent<Player>().AddFoodAmount(_food.Value);
+        player.GetComponent<PlayerAudioHandler>().PlayEatSound();
         CancelInvoke();
         Destroy(gameObject);
     }

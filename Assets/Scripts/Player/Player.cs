@@ -35,8 +35,10 @@ public class Player : MonoBehaviour, IDamageable
     private float _regenTimer;
     private float _damageTimer;
 
+    public bool isHurt = false;
 
-    [SerializeField] PlayerAudioHandler audioRef;
+
+    [SerializeField] PlayerAudioHandler audioHandlerScriptRef;
 
 
 
@@ -45,11 +47,11 @@ public class Player : MonoBehaviour, IDamageable
         if (amount <= 0)
             return;
         Health -= amount;
-        audioRef.PlayHurtSound();
+       
         if (Health <= 0)
         {
             Health = 0;
-            audioRef.PlayDeathSound();
+            audioHandlerScriptRef.PlayDeathSound();
             Die();
         }
     }

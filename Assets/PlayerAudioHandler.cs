@@ -6,10 +6,17 @@ public class PlayerAudioHandler : MonoBehaviour
 {
     [SerializeField] AudioSource audioRef;
     [SerializeField] AudioSource mainAudioHolderRef;
-    [SerializeField] AudioClip hurtSoundClip;
-    [SerializeField] AudioClip swingSoundClip;
     [SerializeField] AudioClip deathSoundClip;
     [SerializeField] AudioClip walkingClip;
+
+    [SerializeField] AudioClip[] swingingWeaponEffectSFX;
+    [SerializeField] AudioClip[] hurtSoundClips;
+    [SerializeField] AudioClip[] pickupSoundClips;
+    [SerializeField] AudioClip[] impactSoundClips;
+    [SerializeField] AudioClip[] eatSoundClips;
+
+
+
 
     public void StopAudio()
     {
@@ -32,20 +39,38 @@ public class PlayerAudioHandler : MonoBehaviour
 
     public void PlayHurtSound()
     {
-        audioRef.clip = hurtSoundClip;
+        audioRef.clip = hurtSoundClips[Random.Range(0, hurtSoundClips.Length)];
+        audioRef.Play();
+    }
+
+    public void PlayPickupSound()
+    {
+        audioRef.clip = pickupSoundClips[Random.Range(0, pickupSoundClips.Length)];
         audioRef.Play();
     }
 
     public void PlaySwingSound()
     {
-        audioRef.clip = swingSoundClip;
+        audioRef.clip = swingingWeaponEffectSFX[Random.Range(0, swingingWeaponEffectSFX.Length)];
+        audioRef.Play();
+    }
+
+    public void PlayimpactSound()
+    {
+        audioRef.clip = impactSoundClips[Random.Range(0, impactSoundClips.Length)];
+        audioRef.Play();
+    }
+
+    public void PlayEatSound()
+    {
+        audioRef.clip = eatSoundClips[Random.Range(0, eatSoundClips.Length)];
         audioRef.Play();
     }
 
     public void PlayDeathSound()
     {
         //switching to main audio handler in order to turn off the theme music
-        mainAudioHolderRef.clip = deathSoundClip;
+        //mainAudioHolderRef.clip = deathSoundClip;
         audioRef.Play();
     }
 }

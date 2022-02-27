@@ -16,12 +16,15 @@ public class EquippedWeapon : MonoBehaviour
 
     private int _durability;
 
+    PlayerAudioHandler audioHandlerScriptRef;
+
+
     public void EquipWeapon(WeaponData data, int durability)
     {
         if (!IsEquipped)
         {
             weaponData = data;
-
+            audioHandlerScriptRef.PlayPickupSound();
             if (_model != null)
             {
                 Destroy(_model);
@@ -42,6 +45,8 @@ public class EquippedWeapon : MonoBehaviour
     public void Attack(IDamageable target)
     {
         target.Damage(weaponData.Damage);
+        audioHandlerScriptRef.PlayimpactSound();
+
     }
 
     public void Drop()
@@ -64,6 +69,7 @@ public class EquippedWeapon : MonoBehaviour
     private void Awake()
     {
         IsEquipped = false;
+        audioHandlerScriptRef = GetComponent<PlayerAudioHandler>();
         
     }
 
@@ -103,6 +109,7 @@ public class EquippedWeapon : MonoBehaviour
         IsAttacking = false;
         if(IsEquipped && Input.GetKeyDown(KeyCode.Mouse0) && _canAttack)
         {
+            audioHandlerScriptRef.PlaySwingSound();
             IsAttacking = true;
             _canAttack = false;
             _durability--;
