@@ -34,6 +34,7 @@ public class Vulture : Animal
         isAlive = false;
         GameObject meat = Instantiate(foodDrop.Prefab, transform.position + Vector3.up, transform.rotation);
         meat.GetComponent<Rigidbody>().AddForce(10 * Vector3.up, ForceMode.Impulse);
+        audioRef.Play();
         Destroy(this.gameObject);
     }
 

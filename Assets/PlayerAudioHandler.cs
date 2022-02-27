@@ -78,7 +78,7 @@ public class PlayerAudioHandler : MonoBehaviour
     public void PlayDeathSound()
     {
         //switching to main audio handler in order to turn off the theme music
-        //mainAudioHolderRef.clip = deathSoundClip;
+        mainAudioHolderRef.clip = deathSoundClip;
         audioRef.Play();
     }
 }
