@@ -21,6 +21,13 @@ public class Vulture : Animal
     [SerializeField]
     private int layerMask;
 
+    AudioSource audioRef;
+
+    private void Start()
+    {
+        audioRef = GetComponent<AudioSource>();
+        InvokeRepeating("AnimalAudio", 3, Random.Range(3, 20));
+    }
     public override void Die()
     {
         if (!isAlive) return;
@@ -30,6 +37,10 @@ public class Vulture : Animal
         Destroy(this.gameObject);
     }
 
+    void AnimalAudio()
+    {
+        audioRef.Play();
+    }
     protected override void SetStateMachine()
     {
         // Implementing the state machine (States and Transitions)

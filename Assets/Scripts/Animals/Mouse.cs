@@ -21,6 +21,19 @@ public class Mouse : Animal
     [SerializeField]
     private int layerMask;
 
+    AudioSource audioRef;
+
+
+    private void Start()
+    {
+        audioRef = GetComponent<AudioSource>();
+        InvokeRepeating("AnimalAudio", 3, Random.Range(3, 20));
+    }
+
+    void AnimalAudio()
+    {
+        audioRef.Play();
+    }
     public override void Die()
     {
         if (!isAlive) return;

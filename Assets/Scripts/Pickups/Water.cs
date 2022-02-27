@@ -15,6 +15,7 @@ public class Water : MonoBehaviour, IPickable
     public void PickUp(GameObject player)
     {
         player.GetComponent<Player>().AddWaterAmount(amount);
+        player.GetComponent<PlayerAudioHandler>().PlayDrinkSound();
         Destroy(gameObject);
     }
 }

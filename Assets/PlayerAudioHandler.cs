@@ -14,6 +14,8 @@ public class PlayerAudioHandler : MonoBehaviour
     [SerializeField] AudioClip[] pickupSoundClips;
     [SerializeField] AudioClip[] impactSoundClips;
     [SerializeField] AudioClip[] eatSoundClips;
+    [SerializeField] AudioClip[] drinkSoundClips;
+
 
 
 
@@ -64,6 +66,12 @@ public class PlayerAudioHandler : MonoBehaviour
     public void PlayEatSound()
     {
         audioRef.clip = eatSoundClips[Random.Range(0, eatSoundClips.Length)];
+        audioRef.Play();
+    }
+
+    public void PlayDrinkSound()
+    {
+        audioRef.clip = drinkSoundClips[Random.Range(0, drinkSoundClips.Length)];
         audioRef.Play();
     }
 

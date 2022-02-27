@@ -29,11 +29,13 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     protected bool _isPlayerInAttackRange;
 
     protected NavMeshAgent _agent;
+    protected AudioSource audioRef;
     protected Vector3 _lastPlayerPosition;
     protected StateMachine _stateMachine;
     protected Player _player = null;
 
     PlayerAudioHandler audioHandlerScriptRef;
+
 
     public abstract void Die();
     protected abstract void SetStateMachine();
@@ -48,6 +50,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         if (Health <= 0)
         {
             Health = 0;
+            audioRef.Play();
             Die();
         }
     }
@@ -64,6 +67,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     protected void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+        audioRef = GetComponent<AudioSource>();
         audioHandlerScriptRef = FindObjectOfType<PlayerAudioHandler>();
         // Randomize the collision avoidance priority
         int collsionPrio = Random.Range(0, 51);
@@ -173,6 +177,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         Debug.Log("[Enemy DamageWithDelay] ATTACK DONE");
         audioHandlerScriptRef.PlayHurtSound();
         _player.isHurt = true;
+        audioRef.Play();
         yield return new WaitForSeconds(delay);
         _player.isHurt = false;
         _canAttack = true;

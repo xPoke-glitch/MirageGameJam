@@ -66,6 +66,7 @@ public class Player : MonoBehaviour, IDamageable
         Health = maxHealth;
         Food = maxFood;
         Water = maxWater;
+        InvokeRepeating("PlayerNotBeingDamaged", 1, 2);
     }
 
     void Update()
@@ -74,6 +75,11 @@ public class Player : MonoBehaviour, IDamageable
         DecreaseWaterOverTime(waterDecreaseRate);
         RegenHealth(healthRegenRate);
         DamageHealthOverTime(healtDamageRate);
+    }
+
+    void PlayerNotBeingDamaged()
+    {
+        isHurt = false;
     }
 
     private void DecreaseFoodOverTime(float decreaseRate)
