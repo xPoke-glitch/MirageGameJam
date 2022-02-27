@@ -23,8 +23,9 @@ public class Vulture : Animal
 
     AudioSource audioRef;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         audioRef = GetComponent<AudioSource>();
         InvokeRepeating("AnimalAudio", 3, Random.Range(3, 20));
     }

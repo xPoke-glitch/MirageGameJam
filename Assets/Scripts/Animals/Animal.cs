@@ -37,7 +37,7 @@ public abstract class Animal : MonoBehaviour, IDamageable
         SetStateMachine();
     }
 
-    protected void Start()
+    protected virtual void Start()
     {
         _lastPlayerPosition = Vector3.zero;
         _isPlayerInRange = false;

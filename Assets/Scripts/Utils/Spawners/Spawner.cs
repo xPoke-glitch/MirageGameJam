@@ -18,6 +18,7 @@ public abstract class Spawner : MonoBehaviour
         GameObject prefab = prefabs[randomIndex];
 
         Vector3 spawnPos = RandomPointInRange(this.transform.position, Range);
+        
         Instantiate(prefab, spawnPos, Quaternion.identity);
     }
 
