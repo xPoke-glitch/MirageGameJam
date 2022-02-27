@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
 
         if(horizontalInput!=0 || verticalInput != 0)
         {
-/*            if (!IsMoving)
+           /* if (!IsMoving)
             {
                 playerAudioRef.PlayWalkSound();
                 playerAudioRef.LoopAudio();
