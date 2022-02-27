@@ -56,7 +56,7 @@ This is an example that shows you how the game looks like. In this scene the pla
 * Justin: https://github.com/BitsEnBytes / https://justinruel.itch.io/
 
 **Music**
-* MkMusic: https://instagram.com/mk.game.audio/
+*  Matthew Kase: https://instagram.com/mk.game.audio/
 
 **SFX**
 * Rickileigh: https://www.instagram.com/synthyloops/
