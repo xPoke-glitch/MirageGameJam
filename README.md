@@ -38,10 +38,10 @@ The commands are really simple:
 * Aiden: https://github.com/Acemoisan / https://acemoisan.itch.io/
 
 **UI/UX**
-Justin: https://github.com/BitsEnBytes / https://justinruel.itch.io/
+* Justin: https://github.com/BitsEnBytes / https://justinruel.itch.io/
 
 **Music**
-MkMusic: https://instagram.com/mk.game.audio/
+* MkMusic: https://instagram.com/mk.game.audio/
 
 **SFX**
-Rae:
+* Rae:
